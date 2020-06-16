@@ -1,0 +1,109 @@
+
+
+\chapter{Kenormalan pada Perluasan Lapangan}
+	Sebelum memulai \textit{chapter} 11, akan diberikan bukti dari Teorema 8.2, di mana pada \textit{chapter} 8 belum dibuktikan. Selanjutnya, Teorema 8.2 akan digunakan untuk membuktikan beberapa Teorema pada \textit{chapter} ini.
+\\ \\	\textit{Bukti: }\textbf{(Teorema 8.2)}\\
+	Diketahui bahwa $\sigma : F \longrightarrow E$ adalah suatu isomorfisma, maka 
+	$$\begin{array}{rcl}
+	\sigma &:& F[x] ~~~~~~~\longrightarrow~~ E[x]\\
+	&:&\sum^{n}_{i=0} \ a_ix^i \mapsto \sum^{n}_{i=0} \ \sigma (a_i)x^i=\sigma f(x),
+	\end{array}$$ juga suatu isomorphisma.
+\\	Selanjutnya, akan digunakan induksi untuk menyelesaikan bukti Teorema ini.
+	\begin{itemize}
+	\item Untuk deg$(f(x))=1$ dan deg$(\sigma f(x))=1.$
+\\	Dikarenakan deg$(f(x))=1$, maka $f(x)=c(x-u)$ dan $u$ merupakan akar dari $f(x)$. $u$ belum tentu elemen di $F$, namun jelas bahwa $u\in F(u)=K.$ Akibatnya, $f(x)\in K[x].$
+\\	Perhatikan bahwa, $$f(x)=c(x-u)=cx-cu,$$
+	karena $c\in F$ dan $cu\in F$, maka $u\in F$ dan $f(x) \in F[x].$ Sehingga, $K=F(u)=F.$
+\\ \\	Selanjutnya, karena $F[x] \cong E[x]$,maka deg$(\sigma f(x))=1$ dan  
+	$$\begin{array}{rcl}
+	\sigma(f(x))&=&\sigma(c(x-u))\\
+	&=&\sigma(cx-cu)\\
+	&=&\sigma(cx)-\sigma(cu)\\
+	&=&\sigma(c)x-\sigma(c)\sigma(u)\\
+	&=&cx-c\sigma(u).
+	\end{array}$$
+	$\sigma(u)$ belum tentu elemen di $E$, namun jelas bahwa $\sigma(u)\in E(u)=L.$ Akibatnya, $\sigma f(x)\in L[x].$
+	Tetapi,karena $c\in E$ dan $c\sigma(u)\in E$, maka $\sigma(u)\in E$ dan $\sigma f(x) \in E[x].$ Sehingga, $L=E(\sigma(u))=E.$
+\\	Jadi, $L\cong E \cong F \cong K.$
+	\item Asumsikan benar untuk deg$(f(x))=n-1.$
+	\item Misal deg$(f(x))=n$.
+	%Ada yang ga paham :(
+\\	Diketahui, $F[x] \cong E[x]$, maka $\sigma(p(x))$ juga polinomial minimal di $E[x]$, dikarenakan koefisien dari derajat tertinggi $p(x)$ adalah 1 dan $\sigma$ suatu homomorphisma sehingga $\sigma(1)=1$.
+\\	Perhatikan bahwa,
+	$$f(x)=p(x)\cdot (polinomial-polinomial~tak~tereduksi~yang~lain).$$
+	Setiap akar dari $p(x)$, juga merupakan akar dari $f(x)$. Sehingga, akar-akar dari $p(x)\in K.$
+\\ \\	Sekarang coba perhatikan,
+	$$\sigma f(x)=\sigma p(x)\cdot \sigma((polinomial-polinomial~tak~tereduksi~yang~lain)).$$
+	Setiap akar dari $\sigma p(x)$, juga merupakan akar dari $\sigma f(x)$. Sehingga, akar-akar dari $\sigma p(x)\in L.$
+\\ \\	Misal $u\in K$ sedemikian hingga $p(u)=0$ dan $v\in L$ sedemikian sehingga $\sigma p(v)=0$. Apakah pemetaan $F(u)\longrightarrow E(v)$ suatu isomorfisma? Ya, Berdasarkan Teorema 10.4
+\\ \\	Selanjutnya, karena $p(u)=0$ maka $f(u)=0.$ Sehingga, $f(x)=(x-u)g(x)$ untuk suatu $g(x) \in F(u)[x].$ Diperoleh bahwa
+	$$\begin{array}{rcl}
+	\sigma (f(x)) &=& \sigma ((x-u)~g(x))\\
+	&=& \sigma (x-u)~\sigma(g(x))\\
+	&=& (\sigma(x)-\sigma(u))~\sigma(g(x))\\
+	&=& (x-v)~\sigma(g(x))~~~~~, \mathrm{untuk~suatu~} \sigma(g(x))\in E(v)[x].
+	\end{array}$$
+\\ 	Berdasarkan hipotesis, $f(x)$ split atas $K$, artinya
+	$$\begin{array}{rcl}
+	f(x)&=&c(x-u)(x-u_2)...(x-u_n)\\
+	&=& (x-u) ~\underbrace{c~(x-u_2)...(x-u_n)}_{g(x)}
+	\end{array}$$
+\\	Cari lapangan $K$ sedemikian sehingga $\{u~:~f(u)=0\} \subset K$. $F(u)\subseteq K$ maka $K=F(u,u_2,...,u_n)$ dan $g(x)$ split atas $K$.
+\\ \\ 	Dapat disimpulkan $K$: lapangan splitting dari $g(x)$ atas $F(u)$ dan $L$: lapangan splitting dari $\sigma g(x)$ atas $E(v)$.
+\\ \\ 	Perhatikan bahwa deg$(g(x))=n-1$. Maka berlaku $F(u)\cong E(v).$
+\\ \\ 	Jadi, $F(u,u_1,...,u_n)=K\cong L =E(v,v_2,...,v_n)$
+	\end{itemize}
+	\textbf{Teorema 11.1}
+\par 	Misalkan $K,L$ adalah perluasan lapangan dari $F$. $[K:F]< \infty$ dan $[L:F]< \infty$. Jika terdapat isomorphisma $f:K\longrightarrow L$, dengan $\forall c \in F~~f(c)=c$, maka $[K:F]=[L:F]$.
+\\
+	\textit{Bukti:}
+\\	Misal $[K:F]=n$, maka $\{u_1,u_2,...,u_n\}$ merupakan basis untuk $K$ atas $F$. Akan dibuktikan $\{f(u_1),f(u_2),...,f(u_n)\}$ juga merupakan basis dari $L$ atas $F$.\\ \\
+	Karena f onto, untuk sembarang $v \in L$, terdapat $u\in K$ sedemikian sehingga $f(u)=v.$ Lebih lanjut, karena $u \in K$, maka $\exists c_i \in F$ sedemikian sehingga $u= \sum^{n}_{i=0} \ c_iu_i$, dan juga $$v=f(u)=f( \sum^{n}_{i=0} \ c_iu_i)= \sum^{n}_{i=0} \ 	f(c_i)f(u_i) =  \sum^{n}_{i=0} \ c_if(u_i).$$
+	Artinya, L direntang oleh $\{f(u_1),f(u_2),...,f(u_n)\}$ atau dapat juga ditulis $L=$span$\{f(u_i)\}$. %ada yang harus ditambahin
+\\	Selanjutnya, akan ditunjukan bahwa $\{f(u_1),f(u_2),...,f(u_n)\}$ bebas linier.Coba perhatikan,
+	$$\begin{array}{rcl}
+	0&=&\sum^{n}_{i=0} \ c_if(u_i)\\
+	&=& \sum^{n}_{i=0} \ f(c_i)f(u_i)\\
+	&=& \sum^{n}_{i=0} \ f(c_iu_i)\\
+	&=& f(\sum^{n}_{i=0} \ c_iu_i).\\
+	\end{array}$$	
+	Karena $f$ adalah pemetaan satu-satu, maka Ker$f=\{0\}$, sehingga $\sum^{n}_{i=0} \ c_iu_i = 0$. Karena $\sum^{n}_{i=0} \ c_iu_i\in K$ dan $\{u_1,u_2,...,u_n\}$ merupakan basis untuk $K$, maka haruslah $c_i=0$ untuk $i=1,2,...,n$. Jadi,
+	$\{f(u_1),f(u_2),...,f(u_n)\}$ merupakan basis untuk $L$. Akibatnya $[K:F]=[L:F]$. $\blacksquare$
+\\
+\\
+	\textbf{Definisi 11.1}
+\par 	$K$ adalah perluasan aljabar dari $F$. $K$ dikatakan \textbf{normal}, jika suatu polinomial tak tereduksi $f(x)\in F[x]$ punya (minimal satu buah) akar di $K$, maka $f(x)$ \textit{split} atas lapangan $K.$
+\\
+\\
+	\textbf{Teorema 11.2}
+\par 	$K$ merupakan \textit{splitting} dari $f(x)\in F[x]$ jika dan hanya jika $K$ normal dan berdimensi hingga.
+\\
+	\textit{Bukti:}
+\\	$\Rightarrow$
+\\	Diketahui bahwa $K$ adalah lapangan \textit{splitting} dari $f(x) \in F[x]$, maka $K=F(u_1,u_2,...,u_n)$ di mana $f(u_i)=0~~\forall i$. Berdasarkan Teorema 7.2, $[K:F]< \infty.$
+\\	Misal $p(x)\in F[x]$, merupakan polinom tak tereduksi dan $p(v)=0$ untuk suatu $v\in K$, maka $p(x)\in K[x].$
+\\	Misalkan $L$ adalah lapangan \textit{splitting} dari $p(x)$ atas $K$, sedemikian sehingga $F\subseteq K \subseteq L.$ Akan ditunjukan bahwa jika $p(u)=0$ dengan $u\in L$, maka $u\in K.$
+\\	Misalkan $w\in L$, $w \ne v$ dan $p(w)=0$. Berdasarkan Teorema 10.4, (dalam hal ini $E=F$ dan $\sigma = I$)
+	$$\begin{array}{rcl}
+	F(v) &\longrightarrow& F(w)\\
+	v &\mapsto& w\\
+	c &\mapsto& c~~~,\forall c\in F.
+	 \end{array}$$
+\\	$K(w)\subseteq L$ dan $K(w)=F(w,u_1,u_2,...,u_n) = F(w) (u_1,u_2,...,u_n).$ Artinya, $K(w)$ adalah lapangan \textit{splitting} dari $f(x)$ atas $F(w).$ 
+\\ \\ 	
+%Ini ga paham lagi
+	Ambil sembarang $v\in K$, dengan $K$ adalah lapangan \textit{splitting} dari $f(x)$ atas $F$, dapat pula dinyatakan bahwa $K$ adalah lapangan \textit{splitting} dari $f(x)$ atas $F(v)$. Berdasarkan Teorema 8.2., suatu isomorfisma dari $F(v)$ ke $F(w)$ dapat diekstensi 	ke
+	$$\begin{array}{rcl}
+	K &\longrightarrow& K(w)\\
+	v &\mapsto& w\\
+	c &\mapsto& c~~~,\forall c\in F.
+	 \end{array}$$
+	Berdasarkan Teorema 11.1., $[K:F]=[K(w):F]$.
+\\ \\
+	Berdasarkan Teorema 6.1., $[K(w):F]=[K(w):K][K:F]$. Akibatnya, $[K:F]=[K(w):K][K:F]$ dan $[K(w):K]=1$. Maka, haruslah $K(w)=K$ dan $w \in K$.
+\\ \\
+	Sehingga, untuk setiap $u\in L$, sedemikian sehingga $p(u)=0$, maka $u\in K$ dan $p(x)$ split atas $K$. Jadi, K normal.
+\\
+	$\Leftarrow$
+\\ 	Diketahui bahwa $dimK=n<\infty$, maka terdapat $\{e_1,...,e_n\}$ yang merupakan basis untuk $K$. Berdasarkan Teorema 6.3., $F(e_1,...,e_n)= K$ berdimensi hingga. Untuk setiap $i=1,..,n$, $e_i$ adalah aljabar atas F, berdasarkan Teorema 7.1., dengan polinomial-polinomial minimal $P_i(x)\in F[x]$.
+\\ \\ 	Selanjutnya, karena $K$ normal, maka setiap  $P_i(x)$ split atas K. Akibatnya, $P_1(x)P_2(x)...P_n(x)=f(x)$ split atas $K$. $\blacksquare$

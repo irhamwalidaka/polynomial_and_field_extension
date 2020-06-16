@@ -1,0 +1,80 @@
+\chapter{Akar Polinomial}
+\textbf{Definisi 10.1}
+	\par Diberikan $f(x) \in F[x],~a \in K$ disebut akar dari $f(x)$ jika $f(a)=0$. Akar juga sering disebut pembuat nol dari suatu polinom.\\
+\\ \textbf{Teorema 10.1} (Teorema Sisa)
+	\par Diberikan $f(x) \in F[x]$, maka $\forall a \in K$ berlaku $f(x)=(x-a)q(x)+f(a)$ dengan $q(x) \in K[x]$ dan $deg(q(x)) = deg(f(x))-1$\\
+\\ \textit{Bukti}:
+\begin{itemize}
+\item $f(x) \in K[x]$, berdasarkan algoritma pembagian, $f(x) = (x-a)q(x)+r(x)$ di mana $q(x),r(x) \in K[x]$ dan $deg(r(x)) < deg (x-a)=1$ atau $r(x)=0$
+\item Artinya $r(x)=0$ atau $deg(r(x))=0$
+\item Artinya $f(x)=(x-a)q(x)+r$\\
+Perhatikan bahwa $f(a)=(a-a)q(a)+r=r$. Sehingga $f(x)=(x-a)q(x)+f(a)$ dengan $q(x) \in K[x]$.
+\item $\begin{array}{rcl}
+\\ deg(f(x)) &=& deg((x-a)q(x)+f(a))
+\\&=& deg ((x-a)q(x))
+\\&=& deg((x-a)) + deg(q(x))
+\\&=&1 + deg(q(x))
+\end{array}$
+\end{itemize}
+\textbf{Teorema 10.2}
+	\par Misalkan $a \in K$ dan $a$ akar dari $f(x) \in F[x]$, maka $(x-a)|f(x)$ di $K[x]$. Artinya setiap polinom dapat dituliskan kedalam bentuk $f(x)=(x-a)q(x)$, dengan $q(x)$ polinom di $K[x]$, jika $a$ itu suatu akar untuk $f(x)$.\\
+\\ \textit{Bukti}: Berdasarkan Teorema Sisa. $f(x)=(x-a)q(x)+f(a)$, untuk setiap $a \in K$. Misalkan $a$ akar dari $f(x)$, maka $f(x)=(x-a)q(x)+0=(x-a)q(x), q(x) \in K[x]$. Artinya $(x-a)|f(x)$ di $K[x]$.\\
+\\ \textbf{Definisi 10.2}
+	\par Diberikan $a \in K$ suatu akar dari $f(x) \in F[x]$. $a$ merupakan akar dari $f(x)$ dengan multiplisitas $m$, jika $(x-a)^m$ membagi $f(x)$, namun $(x-a)^{m+1}$ tidak membagi $f(x)$.\\
+\\ \textbf{Teorema 10.3}
+	\par Misalkan $f(x) \in F[x]$ dan $deg(f(x))=n$, maka $|\{a \in K; f(a)=0\}| \le n$. Artinya, banyaknya akar dari suatu polinom tidak lebih dari derajatnya.\\
+\\ \textit{Bukti}: Akan dibuktikan menggunakan induksi matematika.
+\begin{itemize}
+\item Untuk $n=1$\\
+$deg(f(x)) = 1$, maka $f(x) = \alpha x+\beta$, $\alpha \ne 0,\beta \in F$. $f(a)=0$ jika dan hanya jika $\alpha a+\beta=0$ sehingga $a=-\frac{\beta}{\alpha}$. $a$ pasti ada karena $\alpha \ne 0$. Jadi, $|\{a \in K; f(a)=0\}|=1\le1$
+\item Asumsikan benar untuk $deg(f(x))=s\ne n$.\\
+Artinya $|\{a\in K; f(a)=0\}| \le s$.
+\item Akan dibuktikan untuk $deg(f(x))=n$ bernilai benar.\\
+\begin{enumerate}
+\item Untuk $f(x)$ yang tidak punya akar.\\
+$|\{a\in K; f(a)=0\}|=0\le s \le n$
+\item Untuk $f(x)$ yang mempunyai akar\\
+Asumsikan $a$ akar dari $f(x)$ dengan multiplisitas $m$.\\
+Artinya $(x-a)^m$ membagi $f(x)$ mengakibatkan $\exists q(x) \in K[x]$ sedemikian sehingga $f(x)=(x-a)^mq(x)$ dengan $deg(q(x))=n-m$\\
+dan $(x-a)^{m+1}$ tidak membagi $f(x)$ mengakibatkan $(m-a)^m(x-a)$ tidak membagi $f(x)=(x-a)^mq(x)$. Artinya $(x-a)$ tidak membagi $q(x)$. Maka berdasarkan Teorema.10.2. $a$ bukanlah akar dari $q(x)$.\\
+Misalkan $b \ne a \in K$ akar dari $f(x)$. $0=f(b)=(b-a)^m q(b)$. Jadi, haruslah $q(b)=0$.
+Jadi, $deg(q(x))=n-m<n$. Dari asumsi sebelumya diperoleh $|\{a\in K; q(a)=0\}|<n-m$.\\
+Bagaimana untuk $f(x)$?\\
+$|\{a\in K; f(a)=0\}| \le m+(n-m)=n$.
+\end{enumerate}
+\end {itemize}
+$~$\\ \textbf{Teorema 10.4}
+	\par Misalkan $E,F$ lapangan dan $\sigma :F \to E$ suatu isomorfisma.\\
+$u$ aljabar atas suatu perluasan lapangan dari $F$ dengan polinomial minimal $p(x) \in F[x]$.\\
+$v$ aljabar atas suatu perluasan lapangan dari $E$ dengan polinomial minimal $\sigma (p(x)) \in E[x]$.\\
+Maka, $\exists \bar{\sigma} :F(u) \to E(v)$ sedemikian sehingga $\bar{\sigma}(u)=v$.
+	\par Artinya, dengan $E,F$ lapangan dan ada isomorfisma dari $E$ ke $F$, maka akan selalu ada perluasan dari $E$ dan $F$ yang juga isomorfik.\\
+\\ \textit{Bukti}: 
+\begin{itemize}
+\item $$\begin{array}{rcl}
+\sigma&:&F[x] \to E[x]\\
+& &\sum_{i=0}^{n}(a_ix^i) \to \sum_{i=0}^{n}(\sigma(a_i)x^i))
+\end{array}$$
+\item Berdasarkan Teorema 6.3. $(E(v) \cong E[x]/(\sigma (p(x)))$\\
+$$\begin{array}{rcl}
+\exists \bar{\tau}&:&E[x]/(\sigma (p(x))) \to E(v)\\
+& &[g(x)] \to g(v)
+\end{array}$$
+\item Perhatikan\\
+$$\begin{array}{rcl}
+\pi&:&E[x] \to E[x]/(\sigma(p(x)))\\
+& &g(x) \to [g(x)]
+\end{array}$$
+well defined, onto, homomorfisma. 
+\end{itemize}
+$$\begin{array}{rcl}
+\bar{\tau} \circ \pi \circ \sigma &:&F[x] \to E(v)\\
+& &f(x) \to \sigma(f(v))
+\end{array}$$
+$ker(\bar{\tau} \circ \pi \circ \sigma)=\{f(x) \in F[x]|\sigma (f(v))=0_{E(v)}\}$\\
+$$\begin{array}{rcl}
+\sigma (f(v))=0 &\iff& [\sigma f(x)]:$kelas nol di $E[x]/(\sigma (p(x)))\\
+&\iff& \sigma (f(x)) \equiv 0~mod~(\sigma (p(x)))\\
+&\iff& \sigma (p(x))|\sigma (f(x))\\
+&\iff& \sigma (f(x))
+\end{array}$$\\

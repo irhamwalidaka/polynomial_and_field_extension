@@ -1,0 +1,183 @@
+\chapter{Grup Galois}
+%Pendahuluan%
+	Dalam bab ini, akan dikonstruksi Grup Galois dan selanjutnya akan dibahas sifat-sifat yang berkaitan dengan Grup Galois.
+\\ \\
+	Misalkan $K$ adalah lapangan perluasan atas $F$. $\mathrm{Aut}-F$ dari $K$ didefinisikan sebagai isomorfisma $\sigma: K \longrightarrow K$, sedemikian sehingga $\sigma(c)=c$ untuk setiap $c\in F$. Dengan kata lain, suatu isomorfisma $\sigma: K \longrightarrow K$ merupakan $\mathrm{Aut}-F$ dari $K$, apabila $\sigma$ tersebut direstriksi di $F$ akan sama dengan pemetaan identitas di $F$ i.e. $\sigma |_F=\mathrm{I}_F.$
+\\ \\ 
+	Selanjutnya didefinisikan himpunan $G$ sebagai berikut,
+	$$G:= \{\sigma:K\longrightarrow K | \sigma:\mathrm{Aut}-F~\mathrm{dari}~K\}.$$
+	Pada grup ini, didefinisikan operasi komposisi $'\circ'$, yaitu untuk setiap $\sigma,\tau \in G$ dan $x\in K$ berlaku $(\sigma \circ\tau)(x)=\sigma(\tau(x)).$
+\\ \\ 
+	Perhatikan bahwa,
+	\begin{enumerate}
+	\item Dapat ditunjukan bahwa $\sigma \circ \tau$ suatu isomorfisma dari $K$ ke $K$. Selanjutnya, untuk setiap $c\in F$ berlaku
+	$$(\sigma \circ\tau)(c)=\sigma(\tau(c))=\sigma(c)=c.$$ Sehingga $\sigma \circ \tau\in G$ dan grup $G$ dengan operasi $'\circ'$ bersifat tertutup.
+	\item Untuk setiap $\sigma, \tau,\lambda \in G$, berlaku sifat asosiatif, yaitu
+	$$(\sigma \circ \tau)\circ \lambda=\sigma \circ (\tau \circ \lambda).$$
+	\item Terdapat pemetaan identitas di $K$, yaitu $\iota:K\longrightarrow K$, sedemikian hingga $\iota(c)=(c)$ untuk setiap $c \in K.$ Karenanya,
+	$$(\sigma \circ \iota)(x)= \sigma(\iota(x))=\sigma(x),~\mathrm{dan}$$
+	$$(\iota \circ \sigma)(x)= \iota(\sigma(x))=\sigma(x).$$
+	Selain itu, $\iota$ merupakan isomorfisma dan $\iota |_F=\mathrm{I}_F$, sehingga $\iota \in G.$
+	Jadi, $G$ memiliki elemen identitas.
+	\item Untuk sembarang $\sigma \in G$, $\sigma$ bersifat bijektif, maka akan terdapat $\sigma^{-1}:K \longrightarrow K$ yang isomorfik sedemikian hingga,
+	$$\sigma \circ \sigma^{-1} = \iota = \sigma^{-1} \circ \sigma.$$
+	Selanjutnya, untuk setiap $c\in F$
+	$$\begin{array}{rcl}
+	\sigma(c) &=& c \\
+	(\sigma^{-1} \circ \sigma)(c) &=& \sigma^{-1}(c)\\
+	\iota (c) &=&  \sigma^{-1}(c)\\
+	c &=&  \sigma^{-1}(c)
+	\end{array}$$
+	Artinya, $ \sigma^{-1}|_F=\mathrm{I}_F$, sehingga,  $\sigma^{-1}\in G$. Jadi, setiap elemen di $G$ memiliki invers. 
+	\end{enumerate}
+	Maka dari itu, $(G, \circ)$ adalah grup.
+\\ \\
+	\textbf{Definisi 12.1}
+\par 	Misalkan $K$ adalah perluasan lapangan dari $F$. Grup $(G, \circ)$ dengan $G:= \{\sigma:K\longrightarrow K | \sigma:\mathrm{Aut}-F~\mathrm{dari}~K\}$ disebut Grup Galois dari $K$ atas $F$, selanjutnya dinotasikan $\mathrm{Gal}_{F}K$.
+\\ \\
+	\textbf{Teorema 12.1}
+\par 	Misalkan $f(x) \in F[x]$ dan $u$ adalah akar dari f(x). Jika $\sigma \in \mathrm{Gal}_{F}K$ maka $\sigma(u)$ akar dari $f(x).$
+\\ \\
+	\textit{Bukti:}
+\\	Perhatikan bahwa $f(x)=\sum^{n}_{i=0} \ c_ix^i$, dengan $c_i\in F$ untuk setiap $i$. Karena $u$ adalah akar dari f(x), maka $f(u)=\sum^{n}_{i=0} \ c_iu^i=0_F.$
+\\ \\ 	Selanjutnya, 
+	$$\begin{array}{rcl}
+	0_F = \sigma(0_F)&=& \sigma(\sum^{n}_{i=0} \ c_iu^i)\\
+	&=& \sum^{n}_{i=0} \ \sigma(c_iu^i)\\
+	&=& \sum^{n}_{i=0} \ \sigma(c_i)\sigma(u^i)\\
+	&=& \sum^{n}_{i=0} \ \sigma(c_i)\sigma(u)^i\\
+	&=& \sum^{n}_{i=0} \ c_i\sigma(u)^i\\
+	&=& f(\sigma(u))
+	\end{array}$$
+	Sehingga, diperoleh $f(\sigma(u))=0_F$. Maka terbukti bahwa $\sigma(u)$ merupakan akar dari $f(x).$ $\blacksquare$
+\\ \\ 	Pada teorema di atas, dikatakan bahwa suatu akar dari polinom $f(x)$ akan dipetakan oleh suatu isomorphisma $\sigma \in  \mathrm{Gal}_{F}K$ ke akar dari $f(x)$ tersebut. Untuk mempermudah pemahaman tentang Teorema 12.1, coba perhatikan contoh 		berikut.
+\\ \\ 	\textbf{Contoh 1.}
+	$\mathbb{C}$ merupakan perluasan lapangan dari $\mathbb{R}$, dengan $\mathbb{C}=\mathbb{R}(\textit{i})=\mathbb{R}(\textit{i,-i})$. Didefinisikan suatu pemetaan yang isomorfisma sebagai berikut,
+	$$\begin{array}{rcl}
+	\sigma &:& ~~\mathbb{C} ~~~\longrightarrow~~~ \mathbb{C}\\
+	&:& \mathrm{a+b}i \mapsto ~\mathrm{a-b}i.
+	\end{array}$$
+	Perhatikan bahwa, apabila $\sigma$ di restriksi di $\mathbb{R}$, maka untuk setiap $\mathrm{a}\in \mathbb{R}$ berlaku,
+	$$\begin{array}{rcl}
+	\sigma|_{\mathbb{R}} &:& ~~~\mathbb{C} ~~~~\longrightarrow~~~ \mathbb{C}\\
+	&:& \mathrm{a=a+0}i ~\mapsto ~\mathrm{a-0}i=\mathrm{a},
+	\end{array}$$
+	sehingga $\sigma|_{\mathbb{R}}=\mathrm{I}_{\mathbb{R}}$ dan $\sigma \in \mathrm{Gal}_{\mathbb{R}} \mathbb{C}.$
+\\ \\
+	Pemetaan dari $i$, dengan $i \notin \mathbb{R}$, yang mungkin adalah
+%penomerannya ganti jadi romawi kecil%
+	\begin{enumerate}
+	\item $i \mapsto i$, yang merupakan pemetaan identitas $\iota \in \mathrm{Gal}_{\mathbb{R}} \mathbb{C}$, dan
+	\item $i \mapsto -i$, $\sigma \ne \iota$.
+	\end{enumerate}
+	
+	Jadi, $\mathrm{Gal}_{\mathbb{R}} \mathbb{C} = \{\iota,\sigma\} \cong \mathbb{Z}_2$.
+\\ \\	Apakah ada isomorfisma lain selain $\iota$ dan $\sigma$?
+\\	Andaikan terdapat $\tau\in \mathrm{Gal}_{\mathbb{R}} \mathbb{C}.$ Ingat bahwa $i$ merupakan akar dari $x^2+1.$ Berdasarkan Teorema 12.1, haruslah $\tau(i)=i$ atau $\tau(i)=-i$, di mana keduanya merupakan akar dari $x^2+1.$ Perhatikan bahwa,
+	\begin{itemize}
+	\item Jika $\tau(i)=i$, maka $\tau(\mathrm{a+b}i)=\tau(\mathrm{a})+\tau(\mathrm{b})\tau(i)=\mathrm{a+b}i.$ Sehingga, $\tau=\iota.$
+	\item Jika $\tau(i)=-i$, maka $\tau(\mathrm{a+b}i)=\tau(\mathrm{a})+\tau(\mathrm{b})\tau(i)=\mathrm{a-b}i.$ Sehingga, $\tau=\sigma.$
+	\end{itemize}
+	Artinya, jika ada isomorfisma lain, haruslah isomorfisma tersebut sama dengan $\iota$ atau $\sigma$.
+\\ \\
+	\textbf{Teorema 12.2}
+\par 	Misalkan $f(x)\in F[x]$, K : lapangan splitting dari $f(x)$ atas $F$ dan $u,v\in K$. Terdapat $\sigma \in \mathrm{Gal}_{F}K$ sedemikian sehingga $\sigma(u)=v$ jika dan hanya jika $u$ dan $v$ mempunyai polinomial minimal yang sama di $F[x]$.
+\\
+\par 	Perhatikan kembali Contoh 1, Teorema 12.2 ini, menjamin eksistensi dari $\sigma$ sedemikian hingga $\sigma(i)=-i$, dikarenakan polinomial minimal dari $i$ dan $-i$ sama yaitu $x^2+1.$
+\\ \\
+	\textbf{Teorema 12.3}
+\par 	Misalkan $K=F(u_1,u_2,...,u_n)$ adalah perluasan aljabar dari $F$. Jika $\sigma,\tau \in \mathrm{Gal}_{F}K$ dan $\sigma(u_i)=\tau(u_i)$ untuk setiap $i=1,2,...,n$, maka $\sigma=\tau$.
+\\ 
+\par 	Biasanya, untuk menunjukan kesamaan dua buah fungsi, harus ditunjukan bahwa semua peta dari domain kedua fungsi tersebut sama. Namun, jika kedua fungsi tersebut merupakan elemen dari suatu Grup Galois atas lapangan $F$, maka berdasarkan Teorema 12.3, cukup 	tunjukan peta dari perluasan lapangan F oleh kedua fungsi tersebut sama.
+\\ \\
+	\textbf{Definisi 12.2}
+\par 	$E$ disebut lapangan tengah dari perluasan $K$ atas $F$, jika $F\subseteq E\subseteq K$.
+\\ 
+\par 	Perhatikan bahwa, untuk sembarang $\sigma \in \mathrm{Gal}_{E}K$ berlaku $\sigma|_E=\mathrm{I}_E$ dan untuk sembarang $\tau \in \mathrm{Gal}_{F}K$ berlaku $\tau|_F=\mathrm{I}_F.$ Karena $F \subseteq E$, maka $\sigma|_F=\mathrm{I}_F$, namun $\tau|_E   		\ne \mathrm{I}_E.$ Jadi, apabila $F \subseteq E$ maka  $\mathrm{Gal}_{E}K \subseteq  \mathrm{Gal}_{F}K$.
+\\ \\
+	\textbf{Teorema 12.4}
+\par 	Misalkan $K$ adalah perluasan lapangan dari $K$ dan $H$ subgrup dari $\mathrm{Gal}_{F}K$, misalkan $E_H=\{k\in K~:~\sigma(k)=k \mathrm{~untuk~setiap~} \sigma \in H\},$ maka $E_H$ adalah lapangan tengah dari perluasan $K$ atas $F$.
+\\ \\
+	\textit{Bukti}
+\\	Pertama-tama, akan ditunjukan bahwa $E_H$ adalah sublapangan dari $K$.
+\\ \\ 	Untuk setiap $c,d\in E_H$ dan untuk setiap $\sigma\in H$, berlaku
+	$$\sigma(c+d)=\sigma(c)+\sigma(d)=c+d~~,\mathrm{dan}$$
+	$$\sigma(cd)=\sigma(c)\sigma(d)=cd,$$
+	dikarenakan $\sigma$ merupakan suatu homomorfisma penjumlahan dan juga perkalian. Maka, $c+d,cd\in E_H$, sama artinya dengan $E_H$ bersifat tertutup terhadap operasi penjumlahan dan perkalian.	
+\\ \\ 	Selanjutnya, untuk setiap $\sigma \in H$, berlaku $\sigma(0_F)=0_F$ dan $\sigma(1_F)=1_F$ , maka $0_F,1_F \in E_H.$ Sehingga, $E_H$ memuat elemen identitas penjumlahan dan perkalian.
+\\ \\ 	Lalu, untuk sembarang $c\in E_H$, dengan $c \ne 0$, dan untuk setiap $\sigma \in H,$ berlaku
+	$$\sigma(-c)=-\sigma(c)=-(c)=-c~~,\mathrm{dan}$$
+	$$\sigma(c^{-1})=(\sigma(c))^{-1}=(c)^{-1}=c^{-1}.$$
+	Maka, $-c,c^{-1}\in E_H.$ Sehingga, setiap elemen tak nol di $E_H$ memiliki invers penjumlahan dan juga perkalian.
+\\ \\ 	Jadi, $E_H$ merupakan lapangan dan $E_H\subseteq K.$
+\\ \\ 	Terakhir, untuk setiap $c\in F$ dan $\sigma \in H$, berlaku $\sigma|_F=\mathrm{I}_F~(\sigma(c)=c.)$ Sehingga, $F\subseteq E_H.$
+\\ \\ 	Dari uraian di atas diperoleh $F \subseteq E_H\subseteq K$, berdasarkan Definisi 12.2 $E_H$ adalah lapangan tengah dari perluasan $K$ atas $F$.$\blacksquare$ \\
+
+\par Selanjutnya, $E_H$ yang dimaksud pada Teorema 12.4 kita sebut sebagai lapangan \textit{fixed}dari $K$. Berdasarkan teorema di atas,kita dapat mengkonstruksi lapangan tengah dari lapangan \textit{fixed}, namun lapangan tengah tidak harus berasal dari lapangan \textit{fixed}.
+\\ \\ 
+	\textbf{Contoh 2.} Perhatikan kembali grup $\mathrm{Gal}_{\mathbb{R}} \mathbb{C} = \{\iota,\sigma\}$, seperti yang sudah dipaparkan pada Contoh 1. Subgrup dari $\mathrm{Gal}_{\mathbb{R}} \mathbb{C}$ hanyalah $\{i\}$ dan $\mathrm{Gal}_{\mathbb{R}}  			\mathbb{C}$, maka diperoleh lapangan \textit{fixed} sebagai berikut,
+	\begin{itemize}
+	\item Lapangan \textit{fixed} dari $\{\iota\}$ adalah $\mathbb{C}$
+	\item Lapangan \textit{fixed} dari  $\mathrm{Gal}_{\mathbb{R}} \mathbb{C}$ adalah $\mathbb{R}$.
+	\end{itemize}
+	Maka, contoh lapangan tengah dari perluasan $\mathbb{C}$ atas $\mathbb{R}$ adalah $\mathbb{C}$ dan $\mathbb{R}$.
+\\ \\ 
+	\textbf{Contoh 3.} Perhatikan lapangan perluasan dari $\mathbb{Q}$ berikut, yaitu $\mathbb{Q}(\sqrt{3},\sqrt{5}).$ Berdasarkan Teorema 12.1, untuk setiap $\sigma\in \mathrm{Gal}_{\mathbb{Q}}\mathbb{Q}(\sqrt{3},\sqrt{5})$ berlaku
+	$$\begin{array}{rcl}
+	\sigma&:& \mathbb{Q}(\sqrt{3},\sqrt{5}) \longrightarrow \mathbb{Q}(\sqrt{3},\sqrt{5})\\
+		&:& ~~~~~~\sqrt{3}~~~~~\mapsto ~~~~~~\sigma(\sqrt{3})~:~\mathrm{akar~dari~}x^2-3\\
+		&~& ~~~~~~\sqrt{5}~~~~~\mapsto ~~~~~~\sigma(\sqrt{5})~:~\mathrm{akar~dari~}x^2-5,\\
+	\end{array}$$
+	dengan akar dari $x^2-3$ adalah $\pm\sqrt{3}$ dan akar dari $x^2-5$ adalah $\pm\sqrt{5}.$
+	Berdasarkan Teorema 12.3, diperoleh empat buah pemetaan yang berbeda yaitu,
+	$$\begin{array}{rcl}
+	\iota&:& \mathbb{Q}(\sqrt{3},\sqrt{5}) \longrightarrow \mathbb{Q}(\sqrt{3},\sqrt{5})\\
+		&:& ~~~~~~\sqrt{3}~~~~~\mapsto ~~~~~~\sqrt{3}\\
+		&~& ~~~~~~\sqrt{5}~~~~~\mapsto ~~~~~~\sqrt{5}\\
+	\\
+
+	\sigma&:& \mathbb{Q}(\sqrt{3},\sqrt{5}) \longrightarrow \mathbb{Q}(\sqrt{3},\sqrt{5})\\
+		&:& ~~~~~~\sqrt{3}~~~~~\mapsto ~~~~~~-\sqrt{3}\\
+		&~& ~~~~~~\sqrt{5}~~~~~\mapsto ~~~~~~\sqrt{5}\\
+	\\
+	
+	\alpha&:& \mathbb{Q}(\sqrt{3},\sqrt{5}) \longrightarrow \mathbb{Q}(\sqrt{3},\sqrt{5})\\
+		&:& ~~~~~~\sqrt{3}~~~~~\mapsto ~~~~~~\sqrt{3}\\
+		&~& ~~~~~~\sqrt{5}~~~~~\mapsto ~~~~~~-\sqrt{5}\\
+	\mathrm{dan}\\
+
+	\beta&:& \mathbb{Q}(\sqrt{3},\sqrt{5}) \longrightarrow \mathbb{Q}(\sqrt{3},\sqrt{5})\\
+		&:& ~~~~~~\sqrt{3}~~~~~\mapsto ~~~~~~-\sqrt{3}\\
+		&~& ~~~~~~\sqrt{5}~~~~~\mapsto ~~~~~~-\sqrt{5}.\\
+	\end{array}$$
+	$\therefore~\mathrm{Gal}_{\mathbb{Q}}\mathbb{Q}(\sqrt{3},\sqrt{5})=\{\iota,\sigma,\alpha,\beta\}$ dan $\vert\mathrm{Gal}_{\mathbb{Q}}\mathbb{Q}(\sqrt{3},\sqrt{5})\vert=4.$
+\\ \\
+	Bagaimana mengkonstruksi pemetaan $\sigma,\alpha$ dan $\beta$ yang isomorfisma seperti di atas?
+\\ \\	Coba perhatikan cara mengkonstruksi pemetaan $\sigma$ berikut.
+\\ \\	Ingat kembali bahwa, $x^2-3$ merupakan polinom minimal dari $\pm\sqrt{3}$ atas $\mathbb{Q}.$ Berdasarkan Teorema 10.4, akan terdapat isomorfisma,
+	$$\begin{array}{rcl}
+	\tau&:& \mathbb{Q}(\sqrt{3})~~ \longrightarrow \mathbb{Q}~~(-\sqrt{3})\\
+		&:& ~~~\sqrt{3}~~~~~\mapsto ~~~~~~-(\sqrt{3})\\
+		&~& ~~~~~~c~~~~~\mapsto ~~~~~~c, \mathrm{~untuk~setiap~}c\in \mathbb{Q}.\\
+	\end{array}$$
+\\ \\	Selanjutnya, $x^2-5$ merupakan polinom minimal dari $\pm\sqrt{5}$ atas $\mathbb{Q}.$ Berdasarkan Teorema 10.4, akan terdapat isomorfisma,
+	$$\begin{array}{rcl}
+	\bar{\tau}&:&\mathbb{Q}(\sqrt{3},\sqrt{5}) \longrightarrow \mathbb{Q}(\sqrt{3},\sqrt{5})\\
+		&:& ~~~~\sqrt{5}~~~~~~~\mapsto ~~~~~~(\sqrt{5})\\
+		&~& ~~~~~~~c~~~~~~~\mapsto ~~~~~~c, \mathrm{~untuk~setiap~}c\in \mathbb{Q}.\\
+	\end{array}$$
+	Maka, $\bar{\tau}=\sigma$Dengan cara yang serupa dapat dikonstruksi $\alpha$ dan $\beta$.
+\\ \\	Selanjutnya perhatikan bahwa, 
+	\begin{itemize}
+	\item $\iota(\sqrt{3})= \sqrt{3},$ sehingga $\vert \iota \vert=1$.
+	\item $\sigma \circ \sigma (\sqrt{3})= \sigma(-\sqrt{3})=-\sigma (\sqrt{3})=-(-\sqrt{3})=\sqrt{3},$ sehingga $\vert \sigma \vert=2$.
+	\item $\alpha \circ \alpha (\sqrt{5})= \sigma(-\sqrt{5})=-\sigma (\sqrt{5})=-(-\sqrt{5})=\sqrt{5},$ sehingga $\vert \alpha \vert=2$.
+	\item $\beta \circ \beta (\sqrt{3})= \beta(-\sqrt{3})=-\beta (\sqrt{3})=-(-\sqrt{3})=\sqrt{3},$ sehingga $\vert \beta \vert=2$.
+	\end{itemize}
+ 	Sekarang, coba perhatikan grup $\mathbb{Z}_2\times \mathbb{Z}_2=\{(0,0),(1,0),(0,1),(1,1)\}$, dengan $\vert (0,0)\vert=1,\vert (1,0)\vert=2,\vert (0,1)\vert=2 \mathrm{~dan~} \vert (1,1)\vert=2.$
+\\ \\ 	Karena $\vert\mathrm{Gal}_{\mathbb{Q}}\mathbb{Q}(\sqrt{3},\sqrt{5})\vert=\vert \mathbb{Z}_2\times \mathbb{Z}_2\vert=4$ dan order dari setiap elemennya sama, maka dapat disimpulkan bahwa $\mathrm{Gal}_{\mathbb{Q}}\mathbb{Q}(\sqrt{3},\sqrt{5})\cong \mathbb{Z}_2\times \mathbb{Z}_2.$
+\\ \\
+	\textbf{Teorema 12.5}
+\par 	Jika $K$ adalah lapangan splitting dari $f(x)\in F[x]$, maka $\mathrm{Gal}_FK \cong H$, untuk suatu $H$ subgrup dari grup permutasi.
+	
+

@@ -1,0 +1,106 @@
+
+\chapter{Daerah Ideal Utama}
+\textbf{Definisi 2.1}
+\par 	Suatu daerah integral ,$R$, disebut sebagai daerah Euclid  jika terdapat fungsi $\delta~:~ R\setminus \{0_R\} \rightarrow \mathbb{N}\cup {0}$, yang memenuhi : 
+	\begin{enumerate}
+	\item Jika $a,b \in R,$ dan $a,b \ne 0_R$, maka $ \delta(a) \le \delta (ab).$
+	\item Jika $a,b \in R,$ dan $b \ne 0_R$, maka $a=bq+r$, dengan $r=0_R$ atau $\delta (r) < \delta(b)$.
+	\end{enumerate}
+	\textbf{Contoh:}
+	\begin{enumerate}
+	\item $F[x]$ adalah daerah Euclid dengan fungsi $$\delta~:~ R\setminus \{0_R\} \rightarrow \mathbb{N}\cup {0}$$ $$\delta~:~f(x) \mapsto deg(f(x)).$$
+	\item $\mathbb{Z}$ adalah daerah Euclid dengan fungsi $$\delta~:~ \mathbb{Z}\setminus \{0_R\} \rightarrow \mathbb{N}\cup {0}$$ $$\delta~:~z \mapsto |z|.$$
+	\item $\mathbb{Z}[\textit{i}] : \{ s + t\textit{i} : s,t \in \mathbb{Z}\}$ adalah daerah Euclid dengan fungsi $$\delta~:~ \mathbb{Z}\setminus \{0_R\} \rightarrow \mathbb{N}\cup {0}$$  $$\delta~:~  s + t\textit{i}~~\mapsto s^2+t^2.$$
+	Untuk contoh ini, akan ditunjukan bahwa $\mathbb{Z}[\textit{i}]$ adalah daerah Euclid. Coba perhatikan bahwa
+		\begin{itemize}
+		\item $\delta$ well-defined. Apabila diambil  $s_1 + t_1\textit{i}~,~ s_2 + t_2\textit{i} \in \mathbb{Z}[\textit{i}]$, dengan $s_1 + t_1\textit{i}~=~ s_2 + t_2\textit{i}$, maka $$\delta(s_1 + t_1\textit{i}) = (s_1)^2 + (t_1)^2 = (s_2)^2 + (t_2)^2= \delta(s_2 +                                                         
+		t_2\textit{i}).$$
+		\item $\delta$ memenuhi sifat 1 dari Definisi 2.1.  Jika diambil $s+ t\textit{i} \ne 0_{\mathbb{Z}[\textit{i}]}$, maka $\delta (s+ t\textit{i}) = s^2 +t^2 \ge 1.^{(\star)} $ 
+\\		Misal $u+ v\textit{i} \ne 0_{\mathbb{Z}[\textit{i}]} \in \mathbb{Z}[\textit{i}]$, maka
+			$$\begin{array}{rcl}
+			(s+ t\textit{i})(u+ v\textit{i}) &=& su + sv\textit{i} + ut\textit{i} - tv\\
+			&=& (su-tv) + (sv+ut)\textit{i}.
+			\end{array}$$
+		Sehingga, 
+			$$\begin{array}{rcl}
+			\delta (~(s+ t\textit{i})(u+ v\textit{i})~) &=& (su-tv)^2 + (sv+ut)^2\\
+			&=& ((su)^2 +  (tv)^2-2sutv)+ ((tu)^2 +(sv)^2 +2svut)\\
+			&=&  (su)^2 + (tu)^2 +(sv)^2 + (tv)^2
+			\end{array}$$
+		Selain itu,
+			$$\begin{array}{rcl}
+			\delta ((s+ t\textit{i}))~ \delta((u+ v\textit{i})) &=& (s^2 +t^2)~(u^2 + v^2)\\
+			&=& (su)^2 + (tu)^2 +(sv)^2 + (tv)^2
+			\end{array}$$
+		Maka, kita peroleh bahwa $$\delta ((s+ t\textit{i})(u+ v\textit{i})) = \delta ((s+ t\textit{i}))~ \delta((u+ v\textit{i})).^{(\star \star )}$$
+		Jadi, untuk setiap $a,b \in \mathbb{Z}[\textit{i}]$ dengan $a,b \ne 0_{\mathbb{Z}[\textit{i}]}$, berlaku
+			$$\begin{array}{rcl}
+			\delta (a) &=& \delta(a) \cdot 1\\
+			&\le& \delta(a) \delta(b),~berdasarkan ^{(\star)}\\
+			&=&  \delta(ab), ~berdasarkan ^{(\star \star)}.
+			\end{array}$$
+		\item $\delta$ memenuhi sifat 2 dari Definisi 2.1. Jika diambil $a=s + t\textit{i}, b= u + v\textit{i} \in \mathbb{Z}[\textit{i}]$ dengan $a,b \ne 0_{\mathbb{Z}[\textit{i}]}$, maka
+			$$\begin{array}{rcl}
+			\frac{a}{b}&=& \frac{s + t\textit{i}}{ u + v\textit{i}}\\
+			&=& \frac{s + t\textit{i}}{ u + v\textit{i}} \cdot \frac{u - v\textit{i}}{ u - v\textit{i}}\\
+			&=& \frac{su + ut\textit{i} + tv - sv\textit{i}}{ u^2 + v^2}\\
+			&=& \frac{su+tv}{ u^2 + v^2} + \frac{ut-sv}{ u^2 + v^2} \textit{i}\\
+			&=& c+d\textit{i},~~dengan~c,d \in \mathbb{Q}.
+			\end{array}$$
+
+%ket:ada gambar garis bilangan
+
+		Selanjutnya, akan terdapat $m,n\in \mathbb{Z}$,sedemikian sehingga $|m-c| \le \frac{1}{2}$ dan $|n-d| \le \frac{1}{2}$. Akibatnya,
+			$$\begin{array}{rcl}
+			\frac{a}{b} &=& c+d\textit{i}\\
+			a &=& b (c+d\textit{i})\\
+			&=& b((c-m+m) + (d+n-n) \textit{i})\\
+			&=& b((m+n\textit{i})+((c-m) +(d-n)\textit{i})).
+			\end{array}$$
+		Lalu, akan terdapat $p,q \in \mathbb{Z}[\textit{i}]$, sedemikian sehingga untuk $a,b\in \mathbb{Z}$ yang sudah diberikan sebelumnya, diperoleh $p = b(m+n\textit{i})$ dan $q= b((c-m) +(d-n)\textit{i}).$
+\\		Apakah $\delta(b) > \delta(q)$? Coba perhatikan,
+			$$\begin{array}{rcl}
+			\delta(bq) &=& \delta(b) \delta(q)\\
+			&=& \delta(b)((c-m)^2+(d-n)^2)\\
+			&\le& \delta(b)(\frac{1}{4} +\frac{1}{4)}\\
+			&=& \frac{1}{2} \delta(b)
+			\end{array}$$
+%Lanjutan masih di foto
+		\end{itemize}
+	\end{enumerate}
+	$\blacksquare$
+\\
+\textbf{Definisi 2.2}
+\par 	Daerah Integral ,$R$, yang setiap idealnya memiliki bentuk $(c):=\{ rc~:~r\in R\}$, untuk suatu $c\in R$, disebut Daerah Ideal Utama.
+\\
+\\	\textbf{Contoh:}
+	\begin{itemize}
+	\item $\mathbb{Z}$ adalah Daerah Ideal Utama.
+	\begin{enumerate}
+	\item Jika $I =(0)$, maka $I=\{z0: z\in \mathbb{Z}\}$.
+	\item Jika $I \ne (0)$, misalkan $a>0 \in I$ sedemikian sehingga untuk setiap $b \in I$, berlaku $a \le b$. Selanjutnya, pada $\mathbb{Z}$ berlaku algoritma pembagian, sehingga $$b=aq+r~~,~\exists q,r \in \mathbb{Z} ~\&~ 0\le r <a.$$
+	Perhatikan bahwa, $r=b-aq \in I.$ Karena $a$ adalah elemen terkecil di $I$, namun ada elemen lain,$r$, yang lebih kecil dari $a$,maka haruslah r=0.Akibatnya $b=aq$ dan $b\in (a).$
+	\end{enumerate}
+	Dari 1 dan 2, dapat disimpulkan bahwa setiap ideal dari $\mathbb{Z}$ memiliki bentuk $(a)$, sehingga $\mathbb{Z}$ adalah Daerah Ideal Utama.
+	\end{itemize}
+\textbf{Teorema 2.1}
+\par 	Setiap daerah Euclid adalah Daerah Ideal Utama.
+\\
+	\textit{Bukti:}
+\par 	Ambil sembarang ideal di daerah Euclid R, yaitu  $I \ne (0)$. Maka, $$ \Phi := \{\delta(i)~:~i\in I\} \subset \mathbb{N} \cup \{0\} $$, dan $\Phi$ tak kosong.
+\par 	Berdasarkan sifat keterurutan baik (\textit{well-ordering}), maka terdapat elemen terkecil di $\Phi$, sama artinya dengan,  terdapat $b \in I$ sedemikian sehingga $\delta(b)\le \delta(i), \forall i \in I.$
+\par 	Selanjutnya, jika diambil sembarang $a \in I$, maka $a=bq+r~~,~\exists q,r \in R$ dan nilai $r$ yang mungkin adalah $r=0_R$ atau $\delta(r) < \delta(b).$
+\par 	Karena  $r=a-bq \in I$, tidaklah mungkin $\delta(r) < \delta(b)$, maka haruslah $r=0_R$, sehingga $a=bq\in (b).$ Sehingga $I \subseteq (b). $
+\par 	Untuk setiap $r \in R$, $rb \in (b),$ sehingga $rb \in I.$ Sehingga, $(b)\subseteq I$.
+\par 	Jadi, $I=(b)$. Karena setiap ideal di daerah Euclid memiliki bentuk $(b)$, maka daerah Euclid merupakan Daerah Ideal Utama.$\blacksquare$
+\\
+\\
+\textbf{Definisi 2.3}
+\par 	Daerah Integral R memenuhi Kondisi Rantai Naik (KRN), jika $(a_i) \subseteq (a_2)\subseteq (a_3) \subseteq ...$~, maka terdapat $n \in \mathbb{N}$ sedemikian sehingga $(a_i) \subseteq (a_n)~,~ \forall i \ge n.$ 
+\\
+\\
+\textbf{Contoh},Pada $\mathbb{Z}$,
+	$$(81)\subseteq (9) \subseteq (3) \subseteq (1) = \mathbb{Z} = (1) = (1) = ...~.$$
+\textbf{Bukan Contoh}, Pada $\mathbb{Q}_{\mathbb{Z}}[x],$ dengan
+	$$\mathbb{Q}_{\mathbb{Z}}[x] := \{ a_0+a_1x+a_2x^2+... : a_0 \in \mathbb{Z}, a_i\in \mathbb{Q} \forall i > 0 \}.$$
+

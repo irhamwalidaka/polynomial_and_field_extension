@@ -1,0 +1,147 @@
+
+
+\chapter{Bilangan Aljabar dan Bilangan Transendental}
+Diberikan $F$ lapangan dan $K$ lapangan perluasan dari $F$.
+\begin{itemize}
+\item  Derajat dari $K$ atas $F$, dinotasikan oleh $[K:F]$ adalah dimensi dari $K$ (sebagai ruang vektor) atas $F$.
+\item $[K:F] < \infty \iff K$ perluasan berhingga dari $F$.
+\end{itemize}
+
+	\textbf {Teorema 6.1} 
+\par	Jika $[L:K] < \infty $ dan $[F:K] < \infty  $ maka, $[L:F] = [L:K][K:F] < \infty $.
+\\
+\\ 	\textit{Bukti:}
+\par 	Misal $[L:K]=m, [K:F]=n$, dan $\{e_1,e_2,...,e_m\}$ dan $\{f_1,f_2,...,f_n\}$ Berturut-turut basis untuk $L$ dan $K$. Ambil sembarang $V \in L$, maka $ \exists k_1,k_2,...,k_m \in K$ sedemikian sehingga $$V=k_1e_1+k_2e_2+...+k_me_m.$$ $\forall i \in \{1,2,...,m\},  		~\exists c_ij \in F~,j \in \{1,2,...,n\}$ sedemikian sehingga $$k_i=c_{i1}f_1+c_{i2}f_2+...+c_{in}f_n.$$
+\par 	 Perhatikan bahwa 
+	$$\begin{array}{rcl}
+	V&=&k_1e_1+k_2e_2+...+k_me_m\\
+ 	&=&(c_{i1}f_1+c_{i2}f_2+...+c_{in}f_n)e_1+(c_{i1}f_1+c_{i2}f_2+...+c_{in}f_n)e_2+...\\
+	&&+(c_{i1}f_1+ c_{i2}f_2+...+c_{in}f_n)e_m..(**)\\
+	&=&c_{i1}(f_1e_1)+...+c_{in}f_ne_1+...+c_{m1}(f_1e_m)+...+c_mn(f_ne_m)..(*)
+	\end{array}$$
+\\ Sehingga, $span(\{e_1,e_2,...,e_m\} \times \{f_1,f_2,...,f_n\})=L.$ Selanjutnya, akan ditunjukan $(\{e_1,e_2,...,e_m\} \times \{f_1,f_2,...,f_n\})$ bebas linear.
+\par 	Misal $(*)=0 \iff (**)=0$. Maka $c_{i1}f_1+c_{i2}f_2+...+c_{in}f_n = 0,\\~1\le i \le m..(***)$.
+\par 	Karena $\{e_1,e_2,...,e_m\}$ bebas linear, diperoleh $(***),~c_ij=0~\forall~1 \le i \le m, 1 \le j \le n.$
+\par 	 Kerena $\{f_1,f_2,...,f_n\}$ bebas linear, maka $\{e_1,e_2,...,e_m\} \times \{f_1,f_2,...,f_n\}$: Basis untuk L.
+	$$\begin{array}{rcl}
+	[L:F]&=&0(\{e_1f_1,...,e_1f_n,e_2f_1,...,e_2f_n,...,e_mf_1,...e_mf_n\})
+	\\ &=&m \times n
+	\\ &=&[L:K][K:F]
+	\end{array}$$
+$\blacksquare$
+\\
+\\
+\textbf{Definisi 6.1}
+\par 	 $u \in K$ disebut aljabar atas $F$ jika $\exists c_0,c_1,...,c_n \in F$ yang tidak semuanya nol sedemikian sehingga $c_0+c_1u+c_2u^2+...+c_nu^n=0_F$. Atau dengan kata lain $\exists f(x) \in F[x]$ sedemikian sehingga $f(u)=0_F$.
+\\
+\\
+\textbf{Definisi 6.2}
+\par 	$u \in K$ disebut transedental atas $F$, jika $u$ tidak aljabar atas $F$. Atau dengan kata lain $\forall f(x) \in F[x]$, maka $f(u) \ne 0_f$
+\\
+\\ Contoh:
+\begin{enumerate}
+\item $\sqrt{2}$ aljabar atas $\mathbb{Q}$ karena $\sqrt{2}$ pembuat nol untuk $x^2-2 \in \mathbb{Q}[x]$.
+\item $i$ aljabar atas $\mathbb{R}$ (juga $\mathbb{Q}$) karena $i$ pembuat nol untuk $x^2+1 \in \mathbb{R}[x],\mathbb{Q}[x]$.
+\item $\forall c \in F$ aljabar atas $F$, sebab $c$ pembuat nol untuk $x-c \in F[x]$
+\item Apakah $\sqrt{1+\sqrt{3}}$ aljabar atas $\mathbb{Q}$?
+$$\begin{array}{rcl}
+ x=\sqrt{1+\sqrt{3}} &\Rightarrow& x^2=1+\sqrt{3}
+\\ &\Rightarrow&x^2-1=\sqrt{3}
+\\ &\Rightarrow&(x^2-1)^2=3
+\\ &\Rightarrow&x^4-2x+1=3
+\\ &\Rightarrow&x^4-2x^2-2=0
+\end{array}$$
+Jadi, $\sqrt{1+\sqrt{3}}$ pembuat nol dari $x^4-2x^2-2 \in \mathbb{Q}[x]$ 
+\item $e,\pi$: transendental atas $\mathbb{Q}$ tapi aljabar atas $\mathbb{R}$.
+\end{enumerate}
+\textbf{Teorema 6.2}
+\par Misal $u \in K.~u$ aljabar atas $F \Rightarrow $ terdapat $p(x) \in F[x]$ yang tak tereduksi sedemikian sehingga  $p(u)=0$.
+\par $p(x)$ 'tunggal' hingga faktor konstan dan berderajat terkecil di $F[x]$ sedemikian sehingga $u$ pembuat nol-nya.
+\\ \textit{Bukti:}
+\par Definisikan 
+	$\begin{array}{rcl}
+	\\ \phi_u&:&F[x] \to K
+	\\ &:& \sum^{n}_{i=0} \ a_ix_i \rightarrow \sum^{n}_{i=0} \ a_iu_i
+	\end{array}$
+\\
+\\
+Dapat ditunjukan bahwa $\phi_u$ well-defined.
+\\ Selanjutnya, $ker(\phi_u) =\{f(x) \in F[x]|f(u)=0\}$ dengan $f(x) \in ker(\phi_u)$.
+\begin{itemize}
+\item $\forall g(x) \in F[x]$, maka
+\\ $gf(u)=g(u)f(u)=g(u)0_F=0_Fg(u)=f(u)g(u)=(fg)(u)$.
+\\ Artinya $ker(\phi u)$ ideal di $F[x]$.
+\\ Berdasarkan Teorema 1.4. maka $ \exists p(x) \in F[x]$ sedemikian sehingga $ker(\phi u)=(p(x))$.
+\\ Jelas $p(u)=0_F$. Karena $ker(\phi u)$ (definisi) begitu, maka generatornya pun begitu.
+\item $p(x)$ berderajat terkecil sedemikian sehingga $u$ pembuat nol-nya.
+\\ Bagaimanakah bentuk umum polinomial di $F[x]$ yang mana $u$ pebuat nol-nya tapi derajatnya $=deg(p(x))$?
+\item Tunjukan $p(x)$ tak tereduksi.
+\\ Andaikan $p(x)=r(x)s(x);~deg(r(x)),deg(s(x))>0$ tapi derajatnya kurang dari $p(x)$
+\\ $0_F=p(u)=r(u)s(u)$
+\\ Karena $F$ lapangan, maka $r(u)=0_F$ atau $s(u)=0_F$.
+\\ Kontradiksi, karena, $p(x)$ derajat terkecil sedemikian sehingga $p(u)=0_F$.
+\end{itemize}
+Jadi, haruslah $p(x)$ tak tereduksi.$\blacksquare$
+\\
+\\
+\textbf{Catatan}
+\\
+Polinom monik $p(x)$ dalam Teorema 6.2 disebut polinom minimal.
+\\
+\\ Contoh:
+\begin{itemize}
+\item $x^2-3 \in \mathbb{Q}[x]$ tak tereduksi, monik, $\sqrt{3}$ pembuat nol-nya. Artinya $x^2-3$ polinom minimal dari $\sqrt{3}$ atas $\mathbb{R}$. 
+\item $x^2-3 \in \mathbb{R}[x]$
+\\ $x^2-3=(x+\sqrt{3})(x-\sqrt{3}) \in \mathbb{R}[x]$. Artinya $x-\sqrt{3}$ polinom minimal dari $\sqrt{3}$ atas $\mathbb{R}$.
+\end{itemize}
+
+\textbf{Teorema 6.3}
+\par $u \in K;~u$ aljabar atas $F;~p(x)$ polinom minimal dari $u;~deg(p(x))=n$, maka:
+\begin{enumerate}
+\item Misal $K_i$ sublapangan dari $K$, sedemikian sehingga $\forall i~F \subseteq K_i$ dan $u \in K_i$
+\\ $remark:~K_1~\subsetneq K_2.~Artinya~K_i~tidak~harus~memuat~K_j~dan~sebaliknya.$
+\\ Maka $F(u):= \bigcap^{}_{i} K_i \cong F[x]/(p(x))$.
+\item $\{1_F,u,u^2,...,u^{n-1}\}$ basis untuk $F(u)$ atas $F$.
+\item$[F(u):F]=n$ sama dengan derajat dari polinom minimalnya.
+\end{enumerate}
+\textbf{Catatan}
+\par 	Untuk suatu aljabar $u$ dapat kita pilih polinom minimal sehingga dapat diperoleh lapangan baru atas $F$.
+\\
+\\
+\textit{Bukti:}
+\begin{enumerate}
+\item $u^n \in F(u)~ \forall n \in \mathbb{N}$.
+\par Definisikan
+$\begin{array}{rcl}
+\\ \phi&:&F[x] \to F(u)
+\\ &:& f(x) \to f(u)
+\end{array}$
+\\
+\\Jelas bahwa $\phi$ well-defined dan homomorfisma.
+\\ $ker( \phi ):=\{f(x) \in F[x]| \phi (f(x))=0_F\}=p(x).$
+\\ $ker ( \phi )$ ideal di $F[x]$.
+\item \par Definisikan
+$$\begin{array}{rcl}
+\\ \psi&:&F[x]/ker( \phi ) \to im( \phi ) \subseteq F(u)
+\\ \psi&:& F[x]/p(x) \to im( \phi )
+\\ &:&[f(x)] \to f(u)
+\end{array}$$
+\\
+apakah $\psi$ onto? 
+\\ $\forall y \in Im( \phi )$ maka $\exists f(x) \in F[x]$ sedemikian sehingga $y=f(u)$.
+\\ Ini berarti $\psi ([f(x)])=f(u)=y$
+\\
+\\ Berdasarkan Teorema isomorfisma $I$ untuk ring. Yaitu $R/K \to S$ onto dan $K$ ideal dari $R$ maka, $R/K \cong S$.
+\\Jadi, $F[x]/(p(x)) \cong Im( \phi )$
+\\
+$$\begin{array}{rcl}
+\\ \phi&:&F[x] \to F(u)
+\\ &:& \alpha \to \alpha
+\\ &:& x \to u
+\end{array}$$ di mana $\alpha$ dan $u \in Im( \phi ) \subseteq F(u)$
+\\
+\\ $im( \phi ):$ sublapangan dari $F(u)$ sedemikian sehingga $F \subseteq Im( \phi )$.
+\\
+\\ $F(u)= \bigcap^{}_{i}K_i \Rightarrow F(u)$ sublapangan terkecil yang memuat $F$ dan $u$, maka $F(u) \subseteq Im( \phi )$
+\\ Artinya $F(u)=Im( \phi )$.
+\end{enumerate} $\blacksquare$

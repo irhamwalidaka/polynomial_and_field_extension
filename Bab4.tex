@@ -1,0 +1,110 @@
+
+
+\chapter{Lemma Gauss dan Kriteria Eisenstein}
+\par 	Misal $R$ adalah daerah faktorisasi tunggal. $p(x) \ne 0_R \in R[x]$ disebut primitif, jika dan hanya jika setiap konstanta $c$ di $R[x]$ yang habis membagi $p(x)$ , dinotasikan $c|p(x)$, merupakan unit.
+	\\
+	\textbf{ Contoh :}
+	 \begin{enumerate}
+	\item Ambil $6x^2 + 18x+12 \in Z[x]$
+	\\
+	Perhatikan bahwa\\
+	$\begin{array} {rcl}
+	6x^2 + 18x+12 &=& \pm 1 \cdot \pm(6x^2 + 18x+12)\\
+	&=& \pm 2 \cdot \pm(3x^2 + 9x+6)\\
+	&=& \pm 3 \cdot \pm(2x^2 + 6x+4)\\
+	&=& \pm 6 \cdot \pm(1x^2 + 3x+2)
+	\end{array}$\\
+	Elemen unit pada  $Z[x]$ hanyalah $\pm1$, namun $6x^2 + 18x+12$ juga habis dibagi oleh konstanta $\pm 2, \pm 3$ dan $ \pm 6$ yang bukan unit. Jadi,  $6x^2 + 18x+12$ bukan elemen primitif di $Z[x]$.
+	\item Ambil $3x^2 + -5x+2 \in Z[x]$
+	\\
+	Perhatikan bahwa
+	\\
+	$3x^2 - 5x+ 2 = \pm 1 \cdot \pm(3x^2 - 5x+2)$\\
+	Karena $3x^2  -5x+2 $ hanya habis dibagi oleh $\pm1$, yang merupakan unit di $Z[x]$, maka $3x^2  -5x+2 $ merupakan elemen primitif.
+	\end{enumerate}
+	\textbf{ Lemma 4.1}
+\par 	Jika $p(x) \in R[x]$ primitif dan deg$(p(x))=1$, maka $p(x)$ tak tereduksi. 
+	\\
+	\textit{Bukti:}
+\par 	Karena $p(x)$ primitif dan deg$(p(x)) =1$ , maka bentuk $p(x)=u \cdot q(x)$ akan selalu ada dengan u adalah konstanta di $R[x]$ yang juga unit dan $q(x)$ adalah polinom berderajat 1 yang merupakan \textit{associate} dari $p(x)$. Jadi, $p(x)$ tak tereduksi.$\blacksquare$
+	\\
+	\\
+	\textbf{Catatan :}
+\par 	Jika deg$(p(x)) > 1$, maka tidak bisa ditarik kesimpulan apapun. Misal, ambil dua buah polinom primitif di $Z[x]$ yang berderajat dua, yaitu $x^2 + 1$ dan $x^2 + 3x +2$.  $x^2 + 1$ merupakan polinom tak tereduksi di $Z[x]$, karena hanya habis dibagi oleh 		unit di $Z$ yaitu $\pm1$ dan \textit{associate} nya.  $x^2 + 3x +2$ juga habis dibagi oleh unit di $Z$ yaitu $\pm1$ dan \textit{associate} nya,namun, $x^2 + 3x +2$ juga bisa dinyatakan sebagai perkalian dari $(x+2)(x+1)$. Sehingga, $x^2 + 3x +2$ 			tereduksi.
+	\\
+	\\
+	\textbf{Lemma 4.2}
+\par 	Jika $p(x)\in R[x]$ adalah polinom tak terduksi dan deg$(p(x)) > 0$, maka $p(x)$ primitif.
+	\\
+	\\
+	\textbf{Lemma Gauss}
+\par 	Jika $g(x)~,~h(x)\in R[x]$ , maka $(g\cdot h)(x)$ primitif.
+	\\
+	\textit{Bukti:}
+\par 	Untuk membuktikan Lemma Gauss, akan digunakan kontradiksi. Asumsikan $f(x) = g(x)\cdot h(x)$ tidak primitif, artinya $ \exists ~c \in R[x]$ dan $c | f(x)$ sedemikian sehingga $c$ bukan unit.
+\par 	Perhatikan bahwa $c \ne 0_R$. Karena $R$ adalah daerah faktorisasi tunggal, maka $\exists p_1,...,p_r$ bilangan prima sedemikian sehingga $c = p_1\cdot p_2 \cdot ...\cdot p_r$. Akibatnya, $p_i|f(x)~~\forall i \in \{1,...,r\}$.
+\par 	Akan dibuktikan $p_i|g(x)~\vee~ p_i|h(x)~~\forall i \in \{1,...,r\}$. (Catatan : Jika pernyataan ini benar, maka pembagi konstan untuk $g(x)~~\vee~~h(x)$ ada yang bukan unit. Kontradiksi dengan fakta bahwa $g(x),h(x)$ primitif.). 
+\par 	$f(x) = ~g(x) \cdot h(x)~ \iff \sum^{m+n}_{i=0} \ a_ix^i~=~\sum^{m}_{i=0} \ b_ix^i \cdot \sum^{n}_{i=0} \ c_ix^i$, $a_i,b_i,c_i\in R~,\forall i$.
+\par 	Ambil sembarang $0\le i \le r$. Jika $p_i |a_j~~\forall~j\in \{0,1,...,m+n\}$ , maka $p_i |b_j~~\forall~j\in\{0,1,...,m\}$ atau $p_i |c_j~~\forall~j\in \{0,1,...,n\}$. Akibatnya, berdasarkan Teorema 4.3, $p_i|g(x)~\vee~ p_i|h(x)$. Hal ini kontradiksi dengan fakta bahwa $g(x)$ \& $h(x)$ primitif. Jadi , haruslah $f(x) = ~g(x) \cdot h(x)~$ primitif.$\blacksquare$
+	\\
+	\\
+	\textbf{Teorema 4.3}
+\par 	Misal $m,n \in \mathbb{N}$, $p \in R$ tak tereduksi, dengan $R$ daerah faktorisasi tunggal. $\sum^{m+n}_{i=0} \ a_ix^i~,~\sum^{m}_{i=0} \ b_ix^i~,~ \sum^{n}_{i=0} \ c_ix^i \in R[x]$, dengan $$\sum^{m+n}_{i=0} \ a_ix^i~=~\sum^{m}_{i=0} \ b_ix^i \cdot \sum^{n}_{i=0} \ c_ix^i.$$
+\par 	Jika $p |a_j~~\forall~j\in \{0,1,...,m+n\}$ , maka $p |b_j~~\forall~j\in\{0,1,...,m\}$ atau $p |c_j~~\forall~j\in \{0,1,...,n\}$.
+	\\
+	\textit{Bukti:}
+\par 	Untuk membuktikan Teorema ini, akan digunakan kontradiksi. Asumsikan $\exists r\in \{0,1,...,m\}$ dan $t \in \{0,1,...,n\}$ sedemikian sehingga $p$ tidak membagi $b_r$ dan $p$ tidak membagi $c_t$, namun, $p|b_i~\forall i\in \{0,1,...,r-1\}$ dan $p|c_i~\forall i\in 			\{0,1,...,t-1\}$. Dengan kata lain, dipilih indeks ($r$ dan $t$) terkecil di mana $p$ tidak habis membagi indeks tersebut, sehingga bisa dijamin bahwa indeks yang lebih kecil dari $r$ habis dibagi oleh $p$ ,begitu pula dengan $t$. 
+\par 	Karena $p$ tidak habis membagi $b_r$ dan $c_t$ , maka haruslah $p$ juga tidak habis membagi $b_rc_t$.
+\par 	Perhatikan bahwa, nilai koefisien dari variabel $x^{r+t}$, yaitu $a_{r+t}$, dapat diperoleh sebagai berikut
+	$$ a_{r+t}~=~b_0c_{r+t}+b_1c_{r+t-1}+...+b_{r-1}c_{t+1}+b_rc_t+b_{r+1}c_{t-1}+...+b_{r+t-1}c_1+b_{r+t}c_0$$
+\par 	Dari persamaan di atas, kita peroleh persamaan untuk $b_rc_t$, yaitu
+	$$\begin{array}{rcl}
+	 b_rc_t&=&a_{r+t} - ((b_0c_{r+t}+b_1c_{r+t-1}+...+b_{r-1}c_{t+1})+(b_{r+1}c_{t-1}+...+\\
+	&& b_{r+t-1}c_1+b_{r+t}c_0))
+	\end{array}$$
+	Pada pernyataan awal, diketahui bahwa $p |a_j~~\forall~j\in \{0,1,...,m+n\}$ maka $p|a_{r+t}$. Karena $p|b_i~\forall i\in \{0,1,...,r-1\}$ , maka $p|(b_0c_{r+t}+b_1c_{r+t-1}+...+b_{r-1}c_{t+1})$. Selanjutnya, karena $p|c_i~\forall i\in 						\{0,1,...,t-1\}$, maka $p|(b_{r+1}c_{t-1}+...+b_{r+t-1}c_1+b_{r+t}c_0)$. Akibatnya, $p|b_rc_t$. Hal ini kontradiksi. Jadi, haruslah $p|b_r$ atau $p|c_t$.
+\par 	Kesimpulannya, $p |b_j~~\forall~j\in\{0,1,...,m\}$ atau $p |c_j~~\forall~j\in \{0,1,...,n\}$. $\blacksquare$
+	\\
+	\\
+	\textbf{Kriteria Eisenstein}
+\par 	Misal $f(x)= \sum^{n}_{i=0} \ a_ix^i \in \mathbb{Z}[x]$  dan deg$(f(x)) >0$. Terdapat bilangan prima, $p$, sedemikian sehingga $p|a_i~,~\forall i \in \{0,1,...,n-1\}$. Jika $p|a_n$ dan $p^2|a_0$,  maka $f(x)$ tak tereduksi di $\mathbb{Q}[x]$.
+	\\
+	\textit{Bukti:}
+\par 	Dengan menggunakan kontradiksi, akan dibuktikan kebenaran dari teorema ini. Misal $f(x)= \sum^{n}_{i=0} \ a_ix^i \in \mathbb{Z}[x]$. Asumsikan $f(x)$ tereduksi di $\mathbb{Q}[x]$, artinya $f(x) = g(x) \cdot h(x)$ dengan $g(x), h(x) \in \mathbb{Q}[x]$ yang tereduksi. 
+\par 	Selanjutnya, perhatikan bahwa $\exists~c,d \in \mathbb{Z}$ sedemikian sehingga $c\cdot g(x),d\cdot h(x) \in \mathbb{Z}[x]$. Akibatnya, $cd \cdot f(x) = (c\cdot g(x))(d\cdot h(x)) \in \mathbb {Z}[x]$. (Catatan : $c$ dan $d$ masing-masing adalah KPK dari penyebut 			koefisien-koefisien rasional dari $g(x)$ dan $h(x)$).
+\par 	Misal $p$ adalah suatu bilangan prima, sedemikian sehingga $p|cd$. Karena $cd \ne 0$ dan $cd\in \mathbb{Z}$ bukan unit ,dengan $\mathbb{Z}$ merupakan daerah faktorisasi tunggal, maka dapat dinyatakan $$cd = p\cdot p_1\cdot p_2\cdot ... \cdot p_r.$$ Selain 		itu, $cd~=~pt$, artinya $p| (cda_i)$ , $\forall i \in \{0,1,...,n\}$. Maka,  $p| (cb_i)$ , $\forall i \in \{0,1,...,n\}$ atau  $p| (dc_i)$ , $\forall i \in \{0,1,...,n\}$. 
+\par 	Pilih kondisi ketika $p| (cb_i)$ , $\forall i \in \{0,1,...,n\}$, maka $$c \cdot g(x) = p \cdot k(x) $$ untuk suatu $k(x) \in \mathbb{Z}[x]$. Akibatnya, 
+	$$\begin{array}{rcl}
+	pt \cdot f(x) &=& cd\cdot f(x)\\
+	\iff pt \cdot f(x) &=& (c\cdot g(x)) \cdot (d\cdot h(x))\\
+	\iff pt \cdot f(x) &=& (p\cdot k(x)) \cdot (d\cdot h(x))\\
+	\iff ~t \cdot f(x) &=&(g(x)) \cdot (d\cdot h(x))
+	\end{array}$$
+\par 	Sekarang pilih $q$ ,suatu bilangan prima, sedemikian sehingga $q|t$ atau sama artinya dengan $t = qs$ untuk suatu $s \in \mathbb{Z}$. Karenanya, jika $q$ habis membagi semua koefisien dari $t\cdot f(x)$ , maka $q$ juga habis membagi $(1\cdot k(x)$ atau $			(d \cdot h(x))$. Karena $q$ tidak mungkin habis membagi 1 dan tidak ada jaminan bahwa $q$ akan habis membagi semua koefisien dari $k(x)$, maka haruslah $q$ habis membagi $(d\cdot h(x))$, artinya $d\cdot h(x) = q\cdot l(x)$ untuk suatu $l(x)\in \mathbb{Z}[x].$ 			Sehingga,
+	$$\begin{array}{rcl}
+	t \cdot f(x) &=&(g(x)) \cdot (d\cdot h(x))\\
+	\iff qs\cdot f(x) &=&  k(x)\cdot (q\cdot l(x))\\
+	\iff ~~s\cdot f(x) &=& k(x) \cdot l(x).
+	\end{array}$$
+\par 	Jika $s$ unit, maka $f(x)$ adalah polinom tereduksi di $\mathbb{Z}[x]$.
+\par 	Jika $s$ bukan unit dan $s\ne 0$ , maka $s=p_1p_2...p_n$. Sehingga, $s\cdot f(x) = p_1p_2...p_n\cdot f(x) = k(x)l(x)$. Jika $p_1|s$, maka $p_1|s\cdot f(x) = k(x)l(x)$, artinya $p_1|k(x)$ atau $p_1|l(x)$.
+\par 	Misal $k(x) = p_1\cdot r(x)$, sehingga
+	$$\begin{array}{rcl}
+	p_1p_2...p_n \cdot f(x) &=& p_1\cdot r(x)l(x)\\
+	\iff p_2p_3...p_n \cdot f(x) &=& r(x)l(x).
+	\end{array}$$
+\par 	Dengan menggunakan sebanyak n-1 langkah yang sama dengan sebelumnya, maka akan diperoleh $f(x)=\phi (x)\psi (x)$ untuk suatu $\phi(x),\psi(x) \in \mathbb{Z}[x]$. Artinya $f(x)\in \mathbb{Q}[x]$ tereduksi di $\mathbb{Z}[x]$.
+\par 	Karena f(x) tereduksi di $\mathbb{Z}[x]$, maka
+	$$ f(x) = \sum^{n}_{i=0} \ a_ix^i~=~\sum^{r}_{i=0} \ b_ix^i \cdot \sum^{s}_{i=0} \ c_ix^i$$
+	dengan $n=r+s$ , $b_i,c_j \in \mathbb{Z}$, dan $r,s \ge 1.$
+\par 	Berdasarkan fakta yang dimiliki, $p|a_0$ dengan $a_0 = b_0c_0$, maka $p|b_0$ atau $p|c_0$. Jika $p|c_0$ dan $(p\cdot p)$ tidak habis membagi $a_0=$, maka $p$ jelas tidak habis membagi $b_0.$
+\par 	Fakta yang lain menyebutkan bahwa, $p$ tidak habis membagi $a_n = b_rc_s$, maka $p$ tidak habis membagi $b_r$ dan $c_s$.
+\par 	Misalkan $k\in \{0,1,...,s-1\}$ sedemikian sehingga $p$ tidak habis membagi $c_k$, namun $p|c_i~\forall i \in \{0,1,...,k-1\}.$
+\par 	Sekarang, perhatikan bahwa
+	$$\begin{array}{rcl}
+	a_k &=& b_0c_k+b_1c_{k-1}+...+b_{k-1}c_1+b_kc_0\\
+	\iff b_0c_k &=& a_k - (b_1c_{k-1}+...+b_{k-1}c_1+b_kc_0).
+	\end{array}$$
+	Dari persamaan di atas, diperoleh kesimpulan bahwa $p|b_0c_k$. Mengapa? Karena $p|a_k$ dan $p|(b_1c_{k-1}+...+b_{k-1}c_1+b_kc_0)$.
+\par 	Karena $p|b_0c_k$, maka $p|b_0$ atau $p|c_k$. Dikarenakan $p$ tidak habis membagi $c_k$, maka haruslah $p|b_0$. Namun hal ini kontradiksi dengan fakta bahwa $p$ tidak habis membagi $b_0$. Jadi, haruslah $f(x)$ tak tereduksi di $\mathbb{Q}[x]$. $\blacksquare$
+\\

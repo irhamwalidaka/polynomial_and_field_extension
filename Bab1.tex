@@ -1,0 +1,120 @@
+\chapter{Ring Polinomial dan Algoritma Pembagian}
+	Misal F adalah lapangan, pandang $F[x]$ sebagai himpunan semua suku banyak dengan koefisien elemen di $F$, atau
+		$$ F[x]	:= \big\{ a_0 + a_1x + a_2x^2 + ... + a_nx^n | a_i \in F; n \le 0 \big\}. $$
+	Untuk sembarang $ p(x), q(x) \in F[x]$ , dapat dinyatakan sebagai
+	$$ p(x) = \sum^{n}_{i=0} \ a_ix^i ~~,~~q(x) = \sum^{m}_{i=0} \ b_ix^i   ;~~   n,m \ne 0. $$
+\par Dua buah elemen di $F[x]$ dikatakan sama apabila setiap koefisien dari $x^i$ sama untuk setiap $i$, atau $p(x) = q(x)$ jika dan hanya jika $a_i = b_i , \forall i$.
+\par 	Didefinisikan operasi penjumlahan pada $F[x]$, sebagai berikut
+	$$ +	~~:~~~~F[x] \times F[x] \longrightarrow F[x]$$
+	$$ + ~~:(p(x),q(x)) \mapsto p(x) + q(x)$$
+	dengan, $$p(x) + q(x) = \sum^{s}_{i=0} \ c_ix^i , di~mana~ c_i = a_i + b_i ~dan~ s =max\{n,m\}$$
+	dan $a_{n+1} = a_{n+2} = ... = a_m = 0 $ jika dan hanya jika $m>n$, sebaliknya $b_{m+1} = b_{m+2} = ... = b_n = 0 $ jika dan hanya jika $n>m$.
+\par 	Selanjutnya, sebelum didefinisikan operasi perkalian pada $F[x]$, coba perhatikan contoh berikut,
+	 $$(a_0+a_1x+a_2x^2) \cdot (b_0+b_1x+b_2x^2+b_3x^3),$$
+	koefisien dari $x^4$ dapat diperoleh dari $a_1b_3 + a_2b_2$.  Selain itu,
+	$$~~~~(a_0+a_1x+a_2x^2) \cdot (b_0+b_1x+b_2x^2+b_3x^3)$$
+	$$=(a_0+a_1x+a_2x^2 + 0x^3+0x^4) \cdot (b_0+b_1x+b_2x^2+b_3x^3+0x^4)$$
+	koefisien dari $x^4$ juga dapat diperoleh dari $a_0b_4+a_1b_3+a_2b_2+a_3b_1+a_4b_0$.
+	\\ Sehingga, pada $F[x]$ berlaku operasi perkalian , sebagai berikut
+	$$ \bullet	~~:~~~~ F[x] \times F[x] \longrightarrow F[x]$$
+	$$ \bullet ~~:(p(x),q(x)) \mapsto p(x)\cdot q(x)$$
+	dengan, $$p(x) \cdot q(x) = \sum^{t}_{i=0} \ d_ix^i~;~~ t= 2(n+m)$$
+	di mana $d_i = a_ib_0 + a_{i-1}b_1+...+a_1b_{i-1}+a_0b_1~~,\forall i$ 
+	dan $a_{n+1} = a_{n+2} = ... = a_m = 0$ jika dan hanya jika $m>n$, sebaliknya $b_{m+1} = b_{m+2} = ... = b_n = 0 $ jika dan hanya jika $n>m$.
+	
+\par 	$(F[x], + , \bullet)$ adalah ring komutatif dengan $1_{F[x]}$. Selanjutnya, ring ini cukup ditulis $F[x]$.
+	
+\par	Derajat dari $p(x)= \sum^{n}_{i=0} \ a_ix^i $, dinotasikan $\mathrm{deg}(p(x))$, adalah n, dengan n adalah 		pangkat tertinggi dari variabel $x$ pada polinom $p(x)$.
+	\\ contoh : 
+	\\ $\begin{array}{lcl}
+	\mathrm{deg}( x^3 +1) &=& 3
+	\\\mathrm{deg} ( a_i) &=& 0 ; a_i \ne 0
+	\\\mathrm{deg} ( 0) &=& tidak~ada
+	\end{array}$
+	\\ \\
+	\textbf{ Teorema 1.1}
+\par 	Misal $ p(x), q(x) \in F[x]$ dan $ p(x) + q(x) \ne 0$,maka   $\mathrm{deg}(p(x) + q(x)) \le $ 
+	\\max $\{\mathrm{deg}(p(x),\mathrm{deg}(q(x))\}$.
+	\\
+	\textit{Bukti:}
+\par 	Untuk membuktikan teorema ini, akan dibagi menjadi dua kasus. Pertama  $\mathrm{deg}(p(x) + q(x)) = \mathrm{max} 
+\{\mathrm{deg}(p(x)),\mathrm{deg}(q(x))\}$ dan kedua, $\mathrm{deg}(p(x) + q(x)) <  \mathrm{max} \{\mathrm{deg}(p(x)),\mathrm{deg}(q(x))\}.$
+\par	 Perhatikan bahwa, $p(x) = \sum^{n}_{i=0} \ a_ix^i    ,   q(x) = \sum^{m}_{i=0} \ b_ix^i$, maka , $p(x) + q(x) = \sum^{s}_{i=0} \ c_ix^i , di~mana~ c_i = a_i + b_i ~dan~ s =max\{n,m\}$. Akan terdapat dua kemungkinan nilai dari $\mathrm{deg}(p(x) + q(x))$, yaitu bernilai 		$n$ ketika $n>m$ atau bernilai $m$ ketika $m>n$. Akibatnya, $\mathrm{deg}(p(x) + q(x))=\mathrm{max}\{n,m\}$. 
+\par 	Misalkan $m=\mathrm{deg}(p(x))$ dan $n=\mathrm{deg}(q(x))$. Dengan memilih $p(x)$ dan $q(x)$ yang berderajat sama, n=m, dan $a_m = -b_n$ , maka $\mathrm{deg}(p(x) + q(x)) < n = m$.
+\par 	Jadi, terbukti bahwa  $\mathrm{deg}(p(x) + q(x)) \le $ max $\{\mathrm{deg}(p(x),\mathrm{deg}(q(x))\}$. $\blacksquare$
+	\\ 
+	\\ \textbf {Teorema 1.2}
+\par Misal $p(x),q(x) \ne 0_F \in F[x]$,  maka $\mathrm{\mathrm{deg}}(p(x)q(x))= \mathrm{\mathrm{deg}}(p(x)) + \mathrm{\mathrm{deg}}(q(x))$
+\\ 
+	\textit{Bukti:}
+\par Misalkan $\mathrm{\mathrm{deg}}(p(x))=n$ dan $\mathrm{\mathrm{deg}}(q(x))=m$, dengan $p(x)=a_0+a_1x+...+a_nx^n$ dan $q(x)=b_0+b_1x+...+b_mx^m$, $a_0,...,a_n$ tidak semuanya nol, begitu pula dengan $b_0,...,b_m$. Selanjutnya, perhatikan bahwa 
+	$$\begin{array}{rcl}
+	\mathrm{\mathrm{deg}}(p(x)q(x))&=& \mathrm{\mathrm{deg}}((a_0+a_1x+...+a_nx^n)(b_0+b_1x+...+b_mx^m))\\
+	&=&  \mathrm{\mathrm{deg}}(a_0b_0 + ... + a_nb_mx^{n+m})\\
+	&=& n+m\\
+	&=& \mathrm{\mathrm{deg}}(p(x))+ \mathrm{\mathrm{deg}}(q(x)).
+	\end{array} $$ 
+\\
+\textbf {Teorema 1.3}
+\par $F[x]$ adalah Daerah Integral
+\\
+\\
+	\textit {Bukti:}
+\par Ambil $p(x),q(x) \in F[x], p(x),q(x) \ne 0_F, \mathrm{deg}(p(x))= n$ dan $\mathrm{deg} (q(x))= m$.
+Perhatikan Bahwa
+$p(x)q(x)= a_0b_0 + ... + a_nb_mx^{n+m}$.
+Berdasarkan Teorema 1.2 $\mathrm{deg} (p(x)q(x))= n + m \ge 0$.
+Jadi, $p(x)q(x)= 0_F$
+\\
+\\
+\textbf {Algoritma Pembagian}
+\par Misal $p(x),q(x) \in F[x]$ dengan $m= \mathrm{deg}(q(x)) > 0$, maka $\exists r(x),s(x) \in F[x]$ tunggal sedemikian sehingga $p(x)=q(x)r(x)+s(x)$ di mana $\mathrm{deg}(s(x)) < \mathrm{deg}(q(x))=m$ 
+\\
+\\ Bukti:
+\par Misal $S=\{p(x)-q(x)r(x) | r(x) \in F[x]\}$ dan $s(x) \in S$ sedemikian sehingga  $\forall s_0(x) \in S, \mathrm{deg}(s(x)) \le \mathrm{deg}(s_0(x))$. ($s(x)$ adalah polinom dengan derajat terkecil di $S$). Karena $s(x) \in F(x)$, $s(x)$ dapat ditulis ke dalam bentuk: $$s(x)=\sum ^{t}_{i=0} \ c_ix^i , t>0~~c_t \ne 0_F.$$
+\par Asumsikan $t \ge m$. Perhatikan bahwa $s(x)=p(x)-q(x)r(x) \iff s(x)-\frac {c_t}{b_m}x^{t-m}q(x) = p(x)-q(x)r(x) - \frac {c_t}{b_m}x^{t-m}q(x) \iff s(x)- \frac {c_t}{b_m}x^{t-m}q(x) = p(x)-q(x)[r(x)+ \frac {c_t}{b_m}x^{t-m}]$.
+\par $Note: Mengapa~kita~menggunakan~\frac {c_t}{b_m}x^{t-m}~?$
+\\ $Dengan~menggunakan~kontradiksi,~kita~asumsikan~t \ge m.~Tunjukan~\exists$ $~polinom~\in S~dengan~\mathrm{deg}(polinom)~<~\mathrm{deg}(s(x))~padahal~s(x) adalah$ $~polinom~dengan~derajat~terkecil~di~S.~Maka~
+diperoleh~kesimpulan~bahwa$ $~haruslah~t<m$.
+\par  Perhatikan bahwa $s(x)=c_0+c_1x+...+c_tx^t$ dan $q(x)=b_0+b_1+...+b_mx^m$. Untuk memperoleh polinom dengan derajat $<t$, maka kita harus mengkontruksi polinom yang menyebabkan $c_txt$ di $s(x))$ hilang. $$q(x)(\frac {c_t}{b_m}x^{t-m})=(b_mx^x+...+b_1x+b_0)(\frac {c_t}{b_m}x^{t-m})$$ $$=c_tx^t+...+\frac {b_1c_t}{b_m}x^{t-m+1}+\frac {b_0c_t}{b_m}x^{t-m}$$
+\\ Maka, $\mathrm{deg}(s(x)-\frac {c_t}{b_m}x^{t-m}q(x)) < t$ dengan $s(x)-\frac {c_t}{b_m}x^{t-m} \in S$. 
+\\ Hal ini kontradiksi. Jadi, haruslah $t<m$.
+\\
+\par Bagaimana ketunggalan dari $s(x)$?
+\par Misal s(x) dan r(x) itu tidak tunggal. Maka $p(x)=q(s)r_1(x)+s_1(x)$ dan $p(x)=q(x)r_2(x)+s_2(x)$. Akan ditunjukan bahwa, haruslah $s_1(x)=s_2(x)$ dan $r_1(x)=r_2(x)$.
+\par Perhatikan Bahwa:
+$$p(x)-p(x)=(q(x)r_1(x)+s_1(x))-(q(x)r_2(x)+s_2(x))=0$$
+$$0=q(x)(r_1(x)-r_2(x))+(s_1(x)-s_2(x))$$
+$$\iff -q(x)(r_1(x)-r_2(x))=s_1(x)-s_2(x)$$
+$$\iff q(x)(r_2(x)-r_1(x))=s_1(x)-s_2(x).$$
+\\ Karena $\mathrm{deg}(q(x))=m$ dan $\mathrm{deg}(s_1(x)-s_2(x)) \le m$, haruslah \\$r_2(x)-r_1(x)=0_F.$
+\par Jadi, $s_1(X)-s_2(x)=0 \to s_1(x)=s_2(x)$ dan $r_1(x)-r_2(x)=0_F \to r_1(x)=r_2(x).$ $\blacksquare$ 
+\\ \\
+\textbf{Teorema 1.4}
+\par $I \ne 0_F$ adalah ideal di $F[x] \to I=\{p(x)q(x)|p(x) \in F[x]\}=(q(x))$
+\\
+ \textit{Bukti:}
+\begin{enumerate}
+\item $I \ne 0_F$ maka $\exists g(x) \in I$ sedemikian sehingga $\mathrm{deg}(g(x)) \ge 0$
+\item Ambil $q(x) \in I$ di mana $q(x)$ adalah polinomial dengan derajat terkecil \par di $I$, maka haruslah $\mathrm{deg}(q(x)) \le \mathrm{deg}(g(x))$
+\item Berdasarkan Algoritma Pembagian
+\\ $g(x)=q(x)r(x)+s(x), \exists r(x),s(x) \in F[x]$ di mana $\mathrm{deg}(s(x))<\mathrm{deg}(q(x))$
+\item $q(x) \in I$ maka $q(x)r(x) \in I$ akibatnya, untuk $g(x) \in I$ dan $q(x)r(x)$, maka $s(x)=g(x)-q(x)r(x) \in I$
+\item Berdasarkan poin 2.
+\\ $\mathrm{deg}(q(x) \le \mathrm{deg}(s(x))$
+\\ Kasus 1. $\mathrm{deg}(s(x))>0$, (hal ini tidak mungkin)
+\\ Kasus 2. $\mathrm{deg}(s(x))=0$, (hal ini tidak mungkin)
+\\ Maka haruslah $s(x)=0.$
+\end{enumerate}
+ $\therefore g(x)=q(x)r(x) \forall g(x) \in I$, dapat ditulis $I=\{r(x)q(x)|r(x) \in F[x]\}.$ $\blacksquare$
+\\ \\
+\textbf{Definisi 1.1}
+\par Misal $R$: Daerah Integral,$R$ adalah daerah integral utama $\iff \forall I \subseteq R~\exists a \in R$, sehingga $I=\{xa|x \in R\}=(a).$
+\\ \\
+Berdasarkan definisi di atas, Teorema 1.4 dapat dinyatakan sebagai berikut,
+\\ \\
+\textbf{Teorema 1.4}
+\par $F[x]$ adalah daerah ideal utama.
+\\ \\
+\textbf{Definisi 1.2}
+ \par $p(x) \in F[x]$ disebut monik jika dan hanya jika $a_n=1_F$

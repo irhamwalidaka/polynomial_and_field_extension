@@ -1,0 +1,67 @@
+
+\chapter{Daerah Faktorisasi Tunggal}
+\textbf{Teorema 3.1}
+\par 	Misal $F$ adalah lapangan. Maka $f(x)$ adalah unit di $F[x]$ jika dan hanya jika $f(x)$ adalah polinom konstanta yang tidak nol.
+\\
+	\textit{Bukti:}
+\\ $(\Rightarrow)$
+\par 	Misal $f(x)$ adalah unit di $F[x]$, $F$ lapangan. Akan ditunjukan $f(x)$ adalah polinom konstanta yang tak nol. $f(x)$ unit, sehingga $f(x)g(x)=1_F, ~ \exists g(x) \in F[x].$
+\par 	Perhatikan Bahwa, $$deg(f(x)g(x))=deg(1_F) \iff deg(f(x))+deg(g(x))=0,$$  Maka, haruslah $deg(f(x))=0$ dan deg$(g(x))=0.$ Jadi, $f(x)$ dan $g(x)$ adalah polinom konstanta yang tak nol.
+\\ $(\Leftarrow)$
+\par 	Ambil $f(x)=b \in F[x]~b \ne 0.$ Karena $b \in F$, maka $\exists b^{-1} \in F$ sedemikian sehingga $bb^{-1}=1_F.$ 
+\par 	Dengan asumsi $g(x)=b^{-1} \in F[x]$, kita peroleh $f(x)g(x)=bb^{-1}=1_F.$ Jadi, $f(x)$ adalah unit di $F[x].$ $\blacksquare$
+\\	
+\\
+	\textbf{Catatan}
+\begin{itemize}
+\item Suatu polinomial $f(x) \in F[x]$ disebut $associate$ dari $g(x) \in F[x]$ jika $f(x)=cg(x)$ untuk suatu $c \in F, c \ne 0.$
+\item $f(x)$ adalah $associate$ dari $g(x) \iff g(x)~associate$ dari $f(x).$ 
+\end{itemize}
+\textbf {Definisi 3.1}
+\par Misal $F$ adalah lapangan. Suatu polinom tak konstan $p(x) \in F[x]$ dikatakan tak tereduksi jika pembaginya hanyalah $associate$-nya dan polinom konstan yang tak nol (unit). Polinom tak konstan yang tidak "tidak tereduksi" dikatakan tereduksi.
+\\
+\\ Contoh:
+\par $x+2$ tak tereduksi di $Q[x]$, karena berdasarkan Algoritma Pembagian, pembagi dari $x+2$ haruslah berderajat 1 atau 0.
+\par 	Misal $f(x)|(x+2)$ maka $x+2=f(x)g(x)$ untuk suatu $f(x),g(x) \in Q[x].$ Jika $deg(f(x))=1$ maka $deg(g(x))=0$ sehingga $g(x)=c \in Q$. Akibatnya $c^{-1}(x+2)=f(x)$ dan $f(x)$ adalah $associate$ dari $x+2$.
+\\
+\\
+\textbf{Teorema 3.2}
+\par Misal $F$ adalah lapangan dan $p(x) \in F[x]$ dengan $deg(p(x))>0$
+\\ Maka kondisi dibawah ini ekuivalen:
+\begin{enumerate}
+\item $p(x)$ tak tereduksi.
+\item Jika $b(x)$ dan $c(x)$ adalah sembarang polinom sedemikian sehingga $p(x)|b(x)c(x)$, maka $p(x)|b(x)$ atau $p(x)|c(x)$
+\item Jika $r(x)$ dan $s(x)$ adalah sembarang polinom sedemikian sehingga $p(x)=r(x)s(x)$, maka $r(x)$ atau $s(x)$ adalah polinom konstan tak nol.
+\end{enumerate}
+	\textit{Bukti:}
+\\ $(1.)\Rightarrow(2.)$
+\par 	Misalkan $p(x)$ tak tereduksi dan $\exists b(x),c(x) \in F[x]$ sedemikian sehingga $p(x)|b(x)c(x).$
+\par 	Akan ditunjukan $p(x)|b(x)$ atau $p(x)|c(x).$ 
+\par 	Perhatikan $fpb(p(x),b(x))$, maka haruslah $fpb$ dari $p(x)$ dan $b(x)$ adalah pembagi dari $p(x)$ yang tak nol, dan karena $p(x)$ tak tereduksi, maka pembagi $p(x)$ yang mungkin adalah $associate$-nya atau unit. Jika $fpb(p(x),b(x))$ adalah $associate$ dari $p(x)$, maka $p(x)|b(x)$. Jika $fpb(p(x),b(x))$ adalah unit, maka $p(x)|c(x).$
+\\
+\\ $(2.)\Rightarrow(3.)$
+\par 	Misal $p(x)=r(x)s(x)$ maka $p(x)|r(x)$ atau $p(x)|s(x)$, (berdasarkan poin 2).
+\par 	Jika $p(x)|r(x)$, dengan $r(x)=p(x)v(x)$, maka, 
+	$$ p(x)=r(x)s(x) \iff  p(x)=p(x)v(x)s(x) \iff  v(x)s(x)=1_F.$$
+	Akibatnya $s(x)$ adalah unit. Jadi $s(x)$ adalah konstanta tak nol. Begitu pula $p(x)|s(x).$
+\\
+\\ $(3.)\Rightarrow(1.)$
+\par Misal $c(x)$ adalah sembarang pembagi dari $p(x)$, maka $\exists d(x) \in F[x]$ sedemikian sehingga $p(x)=c(x)d(x).$ $c(x),d(x)$ adalah konstanta tak nol (berdasarkan poin 3).
+\par 	Jika $d(x)=\alpha \ne 0_F$ maka,
+	$$ p(x)=c(x)\alpha \iff  \alpha ^{-1}p(x)=\alpha ^{-1}c(x)\alpha \iff  \alpha ^{-1}p(x)=c(x).$$
+Akibatnya $c(x)$ adalah $associate$ dari $p(x)$ dan konstanta tak nol. Jadi $p(x)$ tak tereduksi.$\blacksquare$
+\\
+\\
+\textbf {Corollary 3.3}
+\par Misal $F$ adalah lapangan dan $p(x) \in F[x]$ adalah polinom tak tereduksi. Jika $p(x)|a_1(x)a_2(x)...a_n(x)$, maka $p(x)$ membagi setidaknya satu $a_i(x).$
+\\
+	\textit{Bukti:}
+\par Jika $p(x)|a_1(x)a_2(x)...a_n(x)$, maka $p(x)|a_1(x)$ atau $p(x)|a_2(x)...a_n(x)$, \\ berdasarkan Teorema 2.1(2).
+	\begin{itemize}
+	\item Kasus 1: Jika $p(x)|a_1(x)$ maka terbukti bahwa $p(x)$ membagi setidaknya satu $a_i(x)$ yang dalam konteks ini $a_1(x)$
+	\item Kasus 2: Jika $p(x)|a_2(x)...a_n(x)$, maka $p(x)|a_2(x)$ atau $p(x)|a_3(x)...a_n(x)$ berdasarkan 2.1(2). Sampai dengan n kali, terbukti bahwa $p(x)$ membagi setidaknya satu $a_i(x)$
+	\end{itemize}$\blacksquare$
+\\
+\\
+\textbf{Teorema 3.4}
+\par Misal $F$ adalah lapangan, setiap polinom tak konstan $f(x) \in F[x]$ adalah produk dari polinom-polinom tak tereduksi di $F[x]$ dan faktorisasinya bersifat unik. Dengan kata lain, jika $f(x)=p_1(x)p_2(x)...p_r(x)$ dan $f(x)=q_1(x)q_2(x)...q_s(x)$ dengan $p_i(x)$ dan $q_j(x)$ polinom tak tereduksi, maka $r=s$, (banyak faktornya sama). Setelah $q_j(x)$ diurutkan kembali dan ditandai ulang jika perlu, maka $p_i(x)$ adalah $associate$ dari $q_i(x)~(i=1,2,...,r)$

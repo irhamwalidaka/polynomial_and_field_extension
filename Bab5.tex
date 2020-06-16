@@ -1,0 +1,263 @@
+\chapter{Peluasan Lapangan}
+\par 	Misal $f(x),g(x),p(x) \in F[x]$, dengan $p(x) \ne 0$. Polinom $f(x)$ dan $g(x)$ dikatakan memiliki relasi terhadap $p(x)$, ditandai dengan $f(x) \equiv g(x)~mod~(p(x))$, jika $p(x)|f(x) - g(x)$. Sifat dari relasi "$\equiv$" , dinyatakan dalam teorema berikut.
+\\
+\\
+	\textbf{Teorema 5.1}
+\par 	Relasi di $F[x]$ terhadap polinom $p(x)$, yaitu "$\equiv$", merupakan relasi ekuivalen. Sehingga memenuhi sifat:
+	\begin{enumerate}
+	\item Reflektif, $f(x)\equiv f(x)~mod~(p(x))$.
+	\item Simetri, Jika $f(x)\equiv g(x)~mod~(p(x))$, maka $g(x)\equiv f(x)~mod~(p(x))$.
+	\item Transitif, Jika $f(x)\equiv g(x)~mod~(p(x))$ dan $g(x)\equiv h(x)~mod~(p(x))$, maka $f(x)\equiv h(x)~mod~(p(x))$.
+	\end{enumerate}
+	\textit{Bukti}
+\par 	Ambil sembarang $f(x),g(x),p(x) \in F[x]$, dengan $p(x) \ne 0$. Akan ditunjukan relasi "$\equiv$" di $F[x]$ terhadap $p(x)$ memenuhi sifat reflektif,simetri dan transitif.
+	\begin{enumerate}
+	\item Perhatikan bahwa, $p(x)|(f(x)-f(x)) = 0$, maka $f(x)\equiv f(x)~mod~(p(x))$. Jadi sifat reflektif terpenuhi.
+	\item Karena $f(x)\equiv g(x)~mod~(p(x))$, maka $p(x)| (f(x)-g(x))$. Perhatikan bahwa, $f(x) - g(x) = -(g(x) - f(x))$, akibatnya $p(x)|g(x) - f(x)$ dan $g(x)\equiv f(x)~mod~(p(x))$. Jadi, sifat simetri terpenuhi.
+	\item $f(x)\equiv g(x)~mod~(p(x))$ dan $g(x)\equiv h(x)~mod~(p(x))$, artinya $p(x)|f(x) - g(x)$ dan $p(x)|g(x) - h(x)$. Perhatikan bahwa, 
+		$$\begin{array}{rcl}
+		f(x) - h(x) &=& f(x) -( g(x) - g(x)) - h(x)\\
+			      &=&  \underbrace{(f(x) - g(x))}_{p(x)|f(x) - g(x)} + \underbrace{(g(x)-h(x))}_{p(x)|g(x) - h(x)}.
+		\end{array}$$
+	Jadi, dapat kita simpulkan bahwa $p(x)| (f(x)-h(x))$, sehingga $f(x)\equiv h(x)~mod~(p(x))$ dan sifat transitif terpenuhi.
+	\end{enumerate} $\blacksquare$
+\\
+\par 	Relasi "$\equiv$"  dari dua polinom ini, selanjutnya kita sebut sebagai kongruensi.
+\\
+\\
+	\textbf{Teorema 5.2}
+\par 	Misal $f(x),g(x),h(x),k(x),p(x) \in F[x]$, $f(x)\equiv g(x)~mod~(p(x))$ dan $h(x)\equiv k(x)~mod~(p(x))$. Maka berlaku:
+	\begin{enumerate}
+	\item $f(x)+h(x)\equiv g(x)+k(x)~mod~(p(x))$.
+	\item $f(x)\cdot h(x)\equiv g(x) \cdot k(x)~mod~(p(x))$.
+	\end{enumerate}
+	\textit{Bukti}
+\par 	Telah diketahui bahwa $f(x)\equiv g(x)~mod~(p(x))$ dan $h(x)\equiv k(x)~mod~(p(x))$, artinya $p(x)|f(x)-g(x)$ dan $p(x)|h(x)-k(x).$ Sehingga, $f(x)-g(x)= p(x)c(x)$ dan $h(x)-k(x)= p(x)d(x),$ untuk suatu $c(x),d(x) \in F[x].$
+\par 	Akibatnya, diperoleh :
+	\begin{enumerate}
+	\item Pada operasi penjumlahan, berlaku\\
+		$\begin{array}{rcl}
+		f(x)+h(x) &=& (p(x)c(x)+g(x)) + (p(x)d(x)+k(x)\\
+		&=& (p(x)c(x)+p(x)d(x))+(g(x)+k(x))\\
+		&=& p(x)(c(x)+d(x)) + (g(x)+k(x)).
+		\end{array}$
+\\	Sehingga, $p(x)|(f(x)+h(x))-(g(x)+k(x))$. Sama artinya dengan $f(x)+h(x)\equiv g(x)+k(x)~mod~(p(x))$.
+	\item Pada operasi perkalian,berlaku\\
+	$\begin{array}{rcl}
+		f(x)h(x) &=& (p(x)c(x)+g(x))\cdot (p(x)d(x)+k(x)\\
+		&=& (p(x)c(x)p(x)d(x))+(p(x)c(x)k(x))+g(x)p(x)d(x)+(g(x)k(x))\\
+		&=& p(x)(c(x)p(x)d(x)+c(x)k(x)+g(x)d(x)) + (g(x)k(x))\\
+		&=& p(x)m(x) +(g(x)k(x)).
+		\end{array}$
+\\	Sehingga, $p(x)|(f(x)h(x))-(g(x)k(x))$. Sama artinya dengan \\$f(x)h(x)\equiv g(x)k(x)~mod~(p(x))$. $\blacksquare$
+	\end{enumerate}	
+\par 	Didefinisikan suatu kelas kongruen dari $f(x)$ adalah himpunan semua $g(x) \in F[x]$ yang memenuhi relasi $f(x) \equiv g(x)$ mod $(p(x))$, dapat juga ditulis $$[f(x)] := \{ g(x) \in F[x]~:~f(x)\equiv g(x) ~mod (p(x)) \} $$.
+\par 	\textbf{Contoh :}
+	\begin{itemize}
+	\item Pada $\mathbb{R}[x]$, ambil $p(x) = x^2 + 1$. Pilih $f(x) = 2x+1$, maka $$[2x+1] := \{ k(x) \in F[x]~:~x^2+1 ~|~2x+1- k(x) \}.$$
+	Perhatikan bahwa, 
+	$$\begin{array}{lcl}
+	(2x+1) - k(x) &=& (x^2+1) l(x)\\
+	k(x) &=& (2x + 1) - (x^2+1) l(x),\\
+	\end{array}$$
+ 	dari persamaan di atas, dapat kita simpulkan bahwa karakteristik polinom $k(x)$ adalah polinom yang apabila dibagi $x^2+1$ akan bersisa $2x+1$, sehingga $k(x) \in [2x+1].$
+	\end{itemize}
+	\textbf{Teorema 5.3}
+\par 	Misal $F$ adalah lapangan, $f(x),g(x),p(x) \in F[x]$, maka pernyataan berikut berlaku :
+	\begin{enumerate}
+	\item $f(x) \equiv g(x)~mod (p(x)) \iff [f(x)]=[g(x)]$
+	\item Untuk setiap $[f(x)],[g(x)] \in F[x]$, hanya ada dua kemungkinan,yaitu :
+	\begin{enumerate}
+		\item $[f(x)] = [g(x)]$
+		\item $[f(x)] \cap [g(x)] = \emptyset. $
+	\end{enumerate}
+	\end{enumerate}
+\par	\textbf{Contoh:}
+	\begin{itemize}
+	\item Pada $\mathbb{Z}_2[x]$, ambil $p(x) = x^2+x+1.$ Perhatikan bahwa, $$[x^2] = \{f(x) \in \mathbb{Z}_2[x]~:~ x^2 - f(x) = (x^2+x+1)\cdot g(x)\}.$$
+	Ingat bahwa di $\mathbb{Z}_2[x]$ berlaku, $1+1 = 0$ dan $1=-1$, akibatnya $$x^2+1x+1 = x^2 -1x-1 = \underbrace {x^2 - (x+1)}_{x^2~\equiv x+1~mod(p(x))}.$$
+	\end{itemize}
+\par 	Dapat didefinisikan suatu himpunan dari kelas-kelas kongruen di $F[x]$ terhadap $p(x) \ne 0$, yaitu $$F[x]/p(x) := \{ [f(x)] ~:~f(x) \in F[x]~dan~f(x) \equiv g(x) ~mod~(p(x)), \exists g(x) \in F[x]\}.$$
+\par 	Pada $F[x]/p(x)$, didefinisikan operasi jumlah dan kali sebagaimana dijelaskan di bawah.
+\\ 	Untuk setiap $f(x),g(x) \in F[x]/p(x)]$, berlaku:
+	\begin{enumerate}
+	\item $[f(x)]+[g(x)] = [f(x)+g(x)]$
+	\item $[f(x)]\cdot[g(x)] = [f(x)\cdot g(x)]$\\
+	\end{enumerate}
+	\textbf{Teorema 5.4}
+\par 	Misal $p(x) \in F[x]$, dengan deg$(p(x)) >0.$
+	\begin{enumerate}
+	\item $F[x]/p(x)$ adalah ring komutatif dengan unsur kesatuan,$[1]$.
+	\item Didefinisikan $F^* := \{ [a]~:a\in F \}$. $F^* \subset F[x]/p(x)$ dan $F\cong F^*.$\\
+	\end{enumerate}
+	\textit{Bukti:}
+	\begin{enumerate}
+	\item Ingat bahwa berdasarkan Teorema 1.3 $F[x]$ adalah daerah integral, sehingga, untuk setiap $[f(x)],[g(x)],[h(x)] \in F[x]/p(x)$  berlaku :
+		\begin{itemize}
+		\item $[f(x)]+[g(x)] = [f(x)+g(x)] \in F[x]/p(x)$. Berdasarkan Teorema 5.2.1. 
+		\item Pada operasi penjumlahan, ($+$), berlaku sifat asosiatif,\\
+		 	$\begin{array}{rcl}
+			([f(x)]+[g(x)])+[h(x)] &=& [f(x)+g(x)]+[h(x)]\\
+			&=& [(f(x)+g(x))+h(x)]\\
+			&=& [f(x)+(g(x)+h(x))]\\
+			&=& [f(x)]+[g(x)+h(x)]\\
+			&=& [f(x)]+([g(x)]+[h(x)]).\\
+			\end{array}$
+		\item Terdapat $[0] \in F[x]/p(x)$, sedemikian sehingga untuk setiap $[h(x)] \in F[x]/p(x)$ berlaku $$[0]+[h(x)] = [0+h(x)]=[h(x)]=[h(x)+0]=[h(x)]+[0].$$
+		\item Untuk setiap $[h(x)] \in F[x]/p(x)$, terdapat $[-h(x)] \in F[x]/p(x)$, sedemikian sehingga berlaku $$[h(x)]+[-h(x)] = [h(x)-h(x)]=[0]=[-h(x)+h(x)]=[-h(x)]+[h(x)].$$
+		\item Berlaku sifat komutatif penjumlahan, \\$[f(x)]+[g(x)] = [f(x)+g(x)]=[g(x)+f(x)]=[g(x)]+[f(x)].$
+		\end{itemize}
+	Sampai di sini, telah ditunjukan bahwa $F[x]/p(x)$ adalah grup abelian (komutatif) penjumlahan. Selanjutnya
+		\begin{itemize}
+		\item Pada operasi perkalian, ($\cdot$), berlaku sifat asosiatif,\\
+		 	$\begin{array}{rcl}
+			([f(x)]\cdot [g(x)])\cdot [h(x)] &=& [f(x)\cdot g(x)]\cdot [h(x)]\\
+			&=& [(f(x)\cdot g(x))\cdot h(x)]\\
+			&=& [f(x)\cdot (g(x)\cdot h(x))]\\
+			&=& [f(x)]\cdot [g(x)\cdot h(x)]\\
+			&=& [f(x)]\cdot ([g(x)]\cdot[h(x)]).\\
+			\end{array}$
+		\item Pada operasi ($+$) dan ($\cdot$), berlaku sifat distributif kanan,\\
+			$\begin{array}{rcl}
+			([f(x)]+[g(x)])\cdot [h(x)] &=& [f(x)+ g(x)]\cdot [h(x)]\\
+			&=& [(f(x)+ g(x))\cdot h(x)]\\
+			&=& [(f(x)\cdot (h(x))+(g(x)\cdot h(x))]\\
+			&=& [f(x)\cdot h(x)] + [g(x)\cdot h(x)]\\
+			&=& [f(x)]\cdot [h(x)] + [g(x)] \cdot[h(x)],\\
+			\end{array}$
+			\\dan distributif kiri,\\
+			$\begin{array}{rcl}
+			[h(x)]\cdot ([f(x)]+[g(x)]) &=&  [h(x)] \cdot [f(x)+ g(x)]\\
+			&=& [h(x) \cdot (f(x)+ g(x))]\\
+			&=& [(h(x)\cdot (f(x))+(h(x)\cdot g(x))]\\
+			&=& [h(x)\cdot f(x)] + [h(x)\cdot g(x)]\\
+			&=& [h(x)]\cdot [f(x)] + [h(x)] \cdot[g(x)].\\
+			\end{array}$
+		\item Berlaku sifat komutatif perkalian, \\$[f(x)]\cdot [g(x)] = [f(x)\cdot g(x)]=[g(x)\cdot f(x)]=[g(x)]\cdot [f(x)].$\\
+		\end{itemize}	
+	Sampai di sini, telah ditunjukan bahwa $F[x]/p(x)$ adalah ring komutatif. 
+		\begin{itemize}
+		\item Terdapat $[1] \in F[x]/p(x)$, sedemikian sehingga untuk setiap $[h(x)] \in F[x]/p(x)$ berlaku $$[1]\cdot [h(x)] = [1 \cdot h(x)]=[h(x)]=[h(x)\cdot 1]=[h(x)]\cdot [1].$$
+		\end{itemize}
+	Jadi, telah ditunjukkan bahwa $F[x]/p(x)$ adalah ring komutatif dengan unsur kesatuan $[1]$.
+	\item Berdasarkan definisi,  $F^* := \{ [a]~:a\in F \}$, karena $F$ adalah lapangan, maka $F^*$ bersifat tertutup terhadap operasi penjumlahan dan perkalian pada $F[x]/p(x)$, selain itu, $\exists [0_F] \in F^*$ yang merupakan elemen identitas pada operasi  				penjumlahan , dan untuk setiap $[a] \in F^*$, berlaku $[a] \ne [0_F]$ ,sehingga terdapat $[-a] \in F^*$. Maka, $F^*$ adalah subring dari $ F[x]/p(x)$.\\
+		Definisikan suatu pengaitan, $\varphi$, dari $F$ ke $F^*$, di mana $\varphi : a \mapsto [a]$. Dapat ditunjukan bahwa $\varphi$ adalah suatu isomorfisma. 
+		\begin{itemize}
+		\item $\varphi$ pemetaan, karena $\forall a,b \in F$ dengan $a=b$ berlaku $$\varphi(a) = [a] = [b] =\varphi(b).$$
+		\item $\varphi$ adalah suatu homomorfisma. Misal, ambil sembarang $\alpha a + \beta b \in F$ maka akan berlaku
+		$$\begin{array}{rcl}
+		\varphi (\alpha a + \beta b) &=& [\alpha a + \beta b]\\
+		&=& [\alpha a] + [\beta b]\\
+		&=& \alpha[a] +\beta [b]\\
+		&=& \alpha \varphi(a) + \beta \varphi(b)
+		\end{array}$$
+		\item $\varphi$ satu-satu, karena $\forall [a],[b] \in F^*$, dengan $[a]=[b]$ berlaku\\ 
+		$$a \equiv b~mod(p(x)), ~sehingga~p(x)|a-b.$$ Karena deg$(p(x)) >0$ dan deg$(a-b) =0$, maka haruslah $a-b = 0$. Jadi $a=b$.
+		\item $\varphi$ pada, karena $\forall b\in F^*$ , berlaku $b=[y]$ untuk suatu $y\in F$, maka $\varphi(y)=[y]=b.$
+		\end{itemize}
+	Jadi, $F\cong F^*.$ $\blacksquare$
+	\end{enumerate}
+\par 	Sekarang akan didefinisikan istilah relatif prima pada $F[x]$. Untuk sembarang dua polinom $f(x),p(x) \in F[x]$, $f(x)$ dan $p(x)$ dikatakan relatif prima jika $fpb(f(x),p(x)) = 1$ atau terdapat $u(x),v(x) \in F[x]$ sedemikian hingga $f(x)u(x)+p(x)v(x) =1$.
+\\
+\\
+	\textbf{Teorema 5.5}
+\par 	Misalkan $f(x),p(x)\in F[x]$ relatif prima, dengan deg$(p(x)) >0$ dan $f(x)\ne 0$ , maka $[f(x)]$ unit di $F[x]/(p(x)).$ \\
+	\textit{Bukti:}
+\par 	Diketahui bahwa $f(x)$ dan $p(x)$ relatif prima, maka terdapat $u(x),v(x) \in F[x]$ sedemikian hingga $$f(x)u(x)+p(x)v(x) =1 \iff f(x)u(x) -1 = p(x)v(x),$$
+	akibatnya, diperoleh bahwa $p(x)~|~f(x)u(x)-1$, sehingga
+	$$\begin{array}{rcl}
+	f(x)u(x)-1 &\equiv& 0 ~mod(p(x))\\
+	f(x)u(x) &\equiv& 1~mod(p(x)).\\
+	\end{array}$$
+	Berdasarkan Teorema 5.3, berlaku
+	$$\begin{array}{rcl}
+	[f(x)][u(x)]&\equiv& [1] ~mod(p(x)).\\
+	\end{array}$$
+\par 	Maka, $[f(x)] \ne [0]$ adalah unit, karena $f(x)$ memiliki invers, yaitu $u(x).$ $\blacksquare$
+\\
+\par 	Pada Teorema 5.5, $[f(x)]$ yang dibahas adalah sembarang elemen di $F[x]/(p(x))$ yang tak nol. Sehingga, dapat kita simpulkan, bahwa setiap $[f(x)] \ne [0]$ di $F[x]/(p(x))$ adalah unit, maka $F[x]/(p(x))$ adalah lapangan.
+\\
+\newpage
+	\textbf{Teorema 5.6}
+\par 	Misalkan deg$(p(x))>0$, $F[x]/(p(x))$ adalah lapangan $\iff p(x)$ tak tereduksi.
+\\
+	\textit{Bukti:}
+\par 	$(\Leftarrow)$ Diketahui $p(x)$ tak tereduksi. Ambil sembarang $[f(x)] \in F[x]/(p(x))$, di mana $[f(x)] \ne [p(x)]$, maka $ fpb(f(x),p(x))$ yang mungkin hanyalah 1 atau associate $p(x).$
+\par 	Perhatikan bahwa, $fpb(f(x),p(x))|f(x)$ namun $p(x)$ tidak habis membagi $f(x)$, maka fpb yang mungkin adalah 1. 
+\par 	Jadi, berdasarkan Teorema 5.5, [f(x)] adalah unit. Karena $[f(x)]$ sembarang elemen, maka $F[x]/(p(x))$ adalah lapangan.
+\\
+\par 	$(\Rightarrow)$  Misal $p(x)=f(x)g(x) - 0$, artinya $f(x)g(x) \equiv 0~mod(p(x)).$ \\
+	Berdasarkan Teorema 5.3.1, $[f(x)g(x)]=[0]$,karena $F[x]/(p(x))$ adalah lapangan,  maka $[f(x)] = [0] \vee [g(x)] = [0].$
+\par 	Pilih $[f(x)] = [0]$, maka
+	$$\begin{array}{rcl}
+	[f(x)] = [0] &\iff& f(x) \equiv 0~mod(p(x)).\\
+	\end{array}$$
+	Akibatnya,
+	$$\begin{array}{rcl}
+	p(x)|f(x)
+	&\iff& f(x) = p(x)q(x).
+	\end{array}$$
+\par 	Di awal, telah kita misalkan $p(x)=f(x)g(x)$, substitusikan nilai dari $f(x)$, sehingga diperoleh bahwa $p(x) = (p(x)q(x))g(x)$. Maka dari itu, $q(x)g(x) = 1$ dan $g(x)$ adalah unit. 
+\par 	Maka pembagi dari $p(x)$ hanyalah associate nya dan unit. Jadi, $p(x)$ tak tereduksi.$\blacksquare$
+\\
+\\
+	\textbf{Catatan!}
+	\begin{itemize}
+	\item Misal $F$ adalah lapangan. Jika $F \subset E$, dan $E$ lapangan, maka $E$ adalah lapangan perluasan dari $F$. Contoh $\mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}$.
+	\item Berdasarkan Teorema 5.4 dan 5.6,  $F[x]/(p(x))$ adalah lapangan perluasan dari $F$.
+	\end{itemize}
+	\textbf{Teorema Kronecker}
+\par 	Jika $f(x) \in F[x]$, deg$(f(x)) > 0$ , maka akan terdapat lapangan perluasan $E$ dari $F$, dan terdapat $\alpha \in E$ sedemikian sehingga $f(\alpha) =0.$
+\\
+	\textit{Bukti:}
+\par 	Ingat kembali bahwa, $F[x]$ adalah Daerah Faktorisasi Tunggal, maka setiap $f(x)\in F[x]$ dapat dinyatakan sebagai hasil kali dari polinom polinom tak tereduksi di $F[x]$. $$f(x) = p(x)\cdot p_1(x)\cdot ... \cdot p_n(x).$$ 
+\par 	Pilih $p(x)$ suatu polinom tak tereduksi, sehingga $F[x]/(p(x))$ adalah lapangan. (Berdasarkan Teorema 5.6).
+\par 	Selanjutnya, definisikan suatu pengaitan, $\Psi$, dari $F$ ke $F[x]/(p(x))$, di mana $\Psi : a \mapsto a+(p(x)).$ Dapat ditunjukan bahwa $\Psi$ adalah suatu isomorfisma. 
+		\begin{itemize}
+		\item $\Psi$ pemetaan, karena $\forall~ a,b \in F$ dengan $a=b$, maka $a-b=0$, sehingga $p(x)|a-b$. Akibatnya,  berlaku $$\Psi(a) = a + (p(x)) = b + (p(x)) =\Psi(b).$$
+		\item $\Psi$ adalah suatu homomorfisma. Misal, ambil sembarang $\alpha a + \beta b \in F$ maka akan berlaku
+		$$\begin{array}{rcl}
+		\Psi (\alpha a + \beta b) &=& (\alpha a + \beta b) + (p(x))\\
+		&=& (\alpha a +(p(x))) + (\beta b +(p(x)))\\
+		&=& \alpha(a+(p(x))) +\beta (b+(p(x)))\\
+		&=& \alpha \Psi(a) + \beta \Psi(b)
+		\end{array}$$
+		\item $\Psi$ satu-satu, karena $\forall a+(p(x)),b+(p(x)) \in F[x]/(p(x))$, dengan $a+(p(x)) = b+(p(x))$ berlaku\\ 
+		$$a-b \equiv 0~mod(p(x)), ~sehingga~p(x)|a-b.$$ Karena deg$(p(x)) >0$ dan deg$(a-b) =0$, maka haruslah $a-b = 0$. Jadi $a=b$.
+		\item $\Psi$ pada, karena $\forall y_0\in  F[x]/(p(x))$ , berlaku $y_0=x_0+(p(x))$ untuk suatu $x_0\in F$, maka $\Psi(x_0)=x_0+(p(x))=y_0.$
+		\end{itemize}
+	Jadi, $F\cong F[x]/(p(x)).$
+\par 	Maka dari itu, kita peroleh, $$F:=\{a:~a\in F\} = \{a+(p(x)): a \in F; p(x) \in F[x], dan~~p(x)~~tak~~tereduksi\}.$$
+	Pilih $E=F[x]/(p(x))$. Misal ada $\alpha \in E$ yang tetap, dengan $\alpha = y+(p(x))$ ($y$ adalah representatif dari $\alpha$).
+\par 	Sekarang, definisikan suatu pengaitan,$\phi_{\alpha}$, dari $F(x)$ ke $E$, di mana $$\phi_{\alpha}: \sum^{n}_{i=0} \ a_ix^i \mapsto \sum^{n}_{i=0} \ a_i\alpha^i,$$
+	dengan $\alpha_i \in F$. Maka, 
+	$$\begin{array}{rcl}
+	\phi_{\alpha}( \sum^{n}_{i=0} \ a_ix^i) &=& \sum^{n}_{i=0} \ a_i\alpha^i\\
+	&=& \sum^{n}_{i=0} \ a_i(y+(p(x)))^i\\
+	&=& a_0+a_1(y+(p(x))) + a_2(y+(p(x)))^2+ \sum^{n}_{i=3} \ a_i(y+(p(x)))^i\\ 
+	&=& (\sum^{n}_{i=0} \ a_iy^i) + (p(x)).
+	\end{array}$$
+\par 	Jika $p(x) = sum^{m}_{i=0} \ b_ix^i$, maka
+	$$\begin{array}{rcl}
+	\phi_{\alpha}(p(\alpha)) &=& \sum^{m}_{i=0} \ b_i{\alpha}^i\\
+	&=& \sum^{n}_{i=0} \ b_i(y+(p(x)))^i\\
+	&=& (\sum^{m}_{i=0} \ b_iy^i) + (p(x))\\
+	&=& p(y)+p(x) =(p(x)) \equiv 0_E.
+	\end{array}$$
+	Jadi, $p(\alpha )=0$, dengan $\alpha \in E.$ $\blacksquare$
+\\
+\par 	\textbf{Contoh:}
+	\begin{itemize}
+	\item Ambil $(x^2+1) \in \mathbb{R}[x]$, yang tidak tereduksi. Berdasarkan Teorema 5.6., $ \mathbb{R}[x]/(x^2+1)$ adalah lapangan.$\mathbb{R} \longrightarrow \mathbb{R}[x]/(x^2+1)  r \mapsto r+<x^2+1>$
+\par 	Misal $\alpha = x +<x^2+1>,$, perhatikan bahwa,
+	$$\begin{array}{rcl}
+	\alpha^2+1 &=& (x +<x^2+1>)^2 + 1\\
+	&=& (x +<x^2+1>)^2 + (1 +<x^2+1>)\\
+	&=& x^2 +2x<x^2+1>+<x^2+1><x^2+1>+ (1 +<x^2+1>)\\
+	&=& x^2 +<x^2+1>+<x^2+1>+ (1 +<x^2+1>)\\
+	&=& (x^2+1) + <x^2+1>\\
+	&=& <x^2+1>\\
+	&=& 0
+	\end{array}$$
+\par 	Perhatikan bahwa, $\mathbb{R} \subset \mathbb{R}[x]/(x^2+1)$. $\mathbb{R}[x]/(x^2+1)$ adalah lapangan perluasan dari $\mathbb{R}$, yang memuat $\alpha = i$. Dan dapat dibuktikan bahwa, $\mathbb{R}[x]/(x^2+1) \cong \mathbb{C}.$
+	\end{itemize}

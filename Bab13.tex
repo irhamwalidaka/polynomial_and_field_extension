@@ -1,0 +1,76 @@
+\chapter{Judul Chapter 13}
+\textbf{Teorema 12.1}
+	\par $K$ lapangan spliting dari $f(x) \in F[x]$, maka $Gal_FK \cong H$ untuk suatu $H$ subgrup dari grup permutasi. Artinya, suatu grup Galois selalu isomorfik dengan subgrup dari grup permutasi.\\
+\\ Contoh 1:\\ \\
+$\omega=\frac{-1+\sqrt{3}i)}{2}$\\ \\
+$\sqrt[3]{2}, \sqrt[3]{2}\omega, \sqrt[3]{2} \omega^2$ merupakan akar-akar dari $x^3-2$.\\ \\
+Misal $K$ lapangan spliting dari $x^3-2$ atas $\mathbb{Q}$\\ \\
+$Gal_{\mathbb{Q}}K \cong H$, di mana $H$ subgrup dari $S_3$\\
+\newpage \textbf{Teorema 12.2}\\ \\
+$note:~\sqrt[3]{2}, \sqrt[3]{2}\omega, \sqrt[3]{2} \omega^2~punya~polinomial~minimal~yang~sama.$\\ \\
+Maka, $\exists$ isomorfisma $\sigma$ sedemikian sehingga akar dipetakan ke akar. Artinya, jika suatu $a$ dan $b$ merupakan akar dari polinomial minimal yang sama, maka akan selalu ada isomorfisma yang memetakan $a$ ke $b$.\\
+Tunjukan pemetaannya apa saja dan bentuk siklik-nya.\\ \\
+$$\sqrt[3]{2} \to \sqrt[3]{2}\omega$$
+$$\sqrt[3]{2}\omega \to \sqrt[3]{2} \omega^2$$
+$$\sqrt[3]{2} \omega^2 \to \sqrt[3]{2}$$\\
+$$\begin{pmatrix}
+1&2&3\\
+2&3&1
+\end{pmatrix} (123)$$\\ \\
+$x^3-2$ (Merupakan akar dari $\sqrt[3]{2}$\\ \\
+$\sqrt[3]{2} \in \mathbb{R}$\\ \\
+$\mathbb{Q}(\sqrt[3]{2}) \subset \mathbb{R}$\\ \\
+$Gal_{\mathbb{Q}}\mathbb{Q}(\sqrt[3]{2})$\\ \\
+$\iota:\sqrt[3]{2} \to \sqrt[3]{2}$\\ \\
+$Gal_{\mathbb{Q}}\mathbb{Q}(\sqrt[3]{2})={1} \cong (1)$\\ \\
+$\begin{array}{rcl}
+E_{Gal_{\mathbb{Q}}\mathbb{Q}(\sqrt[3]{2})}&=&\{k \in \mathbb{Q}(\sqrt[3]{2})|\sigma(k)=k~\forall \sigma \in Gal_{\mathbb{Q}}\mathbb{Q}(\sqrt[3]{2})\} \\
+&=&\mathbb{Q}(\sqrt[3]{2})
+\end{array}$\\ \\ \\
+$\mathbb{Q} \subset \mathbb{Q}(\sqrt[3]{2}) \subset \mathbb{Q}(\sqrt[3]{2},\sqrt[3]{2}\omega,\sqrt[3]{2})$\\ \\
+$\begin{array}{rcl}
+Misal~\mathcal{S}&=&\{E:lapangan~tengah|F \subset E \subset K\}\\
+\mathcal{T}&=&\{H|H~subgrup~dari~Gal_FK\}
+\end{array}$\\ \\
+Karena $F \subseteq E \subseteq K$, maka $Gal_EK \subseteq Gal_FK$. (karena semua pemetaan di $E$ pasti bisa memetakan semua elemen di $F$ karena $F$ termuat di $E$).\\ \\
+Korespondensi Galois dinotasikan dengan $\begin{array}{rcl}
+\mathcal{G}&:&\mathcal{S} \to \mathcal{T}\\
+& &X \to H_X=Gal_XK
+\end{array}$\\ \\
+Contoh 2:\\
+$\mathbb{Q}(\sqrt{3},\sqrt{5})$ adalah lapangan perluasan dari $\mathbb{Q}$, maka $\mathbb{Q} \subset \mathbb{Q}(\sqrt{3}) \subset \mathbb{Q}(\sqrt{3},\sqrt{5})$.\\
+$\mathcal{S}=\{E:lapangan|\mathbb{Q} \subseteq E \subseteq \mathbb{Q}(\sqrt{3},\sqrt{5})\}$\\ \\
+$\mathbb{Q} \subseteq, \mathbb{Q}(\sqrt{3}), \mathbb{Q}(\sqrt{3},\sqrt{5}) \in \mathcal{S}$\\ \\
+$\begin{array}{rcl}
+\mathbb{Q} &\to& H_{\mathbb{Q}}=Gal_{\mathbb{Q}}\mathbb{Q}(\sqrt{3},\sqrt{5})=\{\iota,\sigma,\alpha,\beta\}\\
+\mathbb{Q}(\sqrt{3}) &\to& H_{\mathbb{Q}}(\sqrt{3})=Gal_{\mathbb{Q}\sqrt{3}}\mathbb{Q}(\sqrt{3},\sqrt{5})=\{\iota,\alpha\}\\
+\mathbb{Q}(\sqrt{3},\sqrt{5}) &\to& H_{\mathbb{Q}}(\sqrt{3},\sqrt{5})=Gal_{\mathbb{Q}\sqrt{3},\sqrt{5}}\mathbb{Q}(\sqrt{3},\sqrt{5})=\{\iota\}
+\end{array}$\\ \\
+\\ \textbf{Teorema 13.1}
+	\par $K$ lapangan perluasan dari $F$, dan $K < \infty$\\
+Jika $H$ subgrup dari $Gal_FK$, dan $E$ lapangan fixed dari $H$.\\
+maka $H=Gal_EK$ dan $|H|=[K:E]$. ($Gal_EK$ adalah himpunan semua automorfisma yang ketika di-distrik di $E$ merupakan pemetaan identitas).\\ \\
+$note:~sebetulnya~bisa~ketika~E~lapangan~tengah.~Tetapi~tidak~istimewa.\\~Namun~ketika~E~lapangan~fixed~, Gal_FK=H.~Menjadikannya~istimewa.$\\ \\
+$E$ lapangan fixed $\Rightarrow E$ lapangan tengah.\\
+lapangan fixed $\ne \varnothing$.\\ \\
+jadi, $\forall H \in \mathcal{T} \Rightarrow \exists E$ lapangan fixied $\in \mathcal{S}$ sedemikian sehingga $\mathcal{G}(E)=Gal_EK=H$ (Teorema 13.1).\\
+Artinya $\mathcal{G}$ onto.\\
+\\ \textbf{Definisi}
+	\par $K$ perluasan lapangan dari $F$, $K$ normal, $K$ separable dan $dim(K)<\infty \iff K$ perluasan Galois dari $F$, atau $K$:Galois atas $F$.\\ \\
+\begin{itemize}
+\item $f(x) \in F[x];~deg(f(x))=n$ $f(x)$ dikatakan separable jika $|\{u\in K|f(u)=0_F\}|=n$ untuk suatu lapangan spliting $K$ dari $F$. Artinya,suatu polinom dikatakan separable jika banyaknya akar sama dengan derajat-nya.
+\item $u \in K$ dikatakan separable atas $F$ jika \begin{enumerate}
+\item $u$ aljabar atas $F$.
+\item polinom minimal dari $u$ separable.
+\end{enumerate}
+\item $K$ perluasan separable dari $F$ jika $\forall u \in K$, $u$ separable. Artinya suatu lapangan perluasan dikatakan perluasan separable jika setiap elemennya separable.
+\end{itemize}
+\textbf{Teorema 13.2}
+	\par $K$ perluasan Galois dari $F$, $E$ lapangan tengah\\
+Maka $E$ adalah lapangan fixed dari subgrup $Gal_EK$. Artinya jika $K$ perluasan Galois dari $F$, setiap lapangan tengah antara $K$ dan $F$ merupakan lapangan fixed.\\ \\
+Semua lapangan tengah bisa menjadi lapangan fixed, asalkan $K$ perluasan Galois dari $F$.\\ \\
+Misal $E,L$ lapangan tengah dari perluasan $K$ atas $F$ dengan $Gal_EK=Gal_LK$.\\
+Jika $K$ perluasan Galois dari $F$, maka berdasarkan Teorema 13.2.\\
+$E=L$.\\ \\
+Jika $K$ perluasan Galois. $\mathcal{G}$ menjadi bijektif. Jika bukan, maka $\mathcal{G}$ hanya onto. 
+

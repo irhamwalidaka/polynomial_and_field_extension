@@ -1,0 +1,72 @@
+
+
+\chapter{Splitting Field}
+	Pada chapter ini, $K$ selalu kita misalkan sebagai perluasan lapangan dari F.
+\\
+\\	\textbf{Definisi 8.1}
+\par 	Misal $f(x) \in F[x]$, deg$(f(x))=n>0$, dan $$f(x)=c(x-u_1)(x-u_2)...(x-u_n)~~\in K[x],$$ maka $f(x)$ adalah \textit{split} atas lapangan $K$.
+\\
+\par 	Artinya, $f(x)$ dikatakan \textit{split} atas lapangan $K$, jika $f(x)$ dapat dinyatakan atas faktor-faktor linier di $K[x]$.
+\\
+\\
+	\textbf{Definisi 8.2}
+\par 	Misal $f(x) \in F[x],$ $K$ merupakan lapangan \textit{splitting} (lapangan akar) dari $f(x)$ atas $F$, jika:
+	\begin{enumerate}	
+	\renewcommand{\labelenumi}
+	{\roman{enumi}}
+	\item $f(x)$ \textit{split} atas K.
+	\item $K = F(u_1,...,u_n)$, artinya $K$ merupakan perluasan lapangan terkecil sedemikian sehingga $F\subseteq K$ dan $u_1,...,u_n \in K.$
+	\end{enumerate}
+\par 	Dari dua definisi di atas, tidak disebutkan secara spesifik apakah $f(x)$ itu merupakan polinom tak tereduksi ataupun tereduksi, mengapa? Sebelum menjawab pertanyaan ini, coba perhatikan contoh berikut.
+\\
+\\
+	\textbf{Contoh :}
+	\begin{enumerate}
+	\item Perhatikan $x^2+1 \in \mathbb{R}[x]$, polinom ini merupakan polinom tak tereduksi di $\mathbb{R}[x]$. Karena $$x^2+1=(x+\textit{i})(x+(\textit{-i})) \in \mathbb{C}[x],$$ maka $K=\mathbb{R}(\textit{i}) = \mathbb{C}$ dan $\mathbb{C}$ merupakan 			lapangan \textit{splitting} dari $x^2+1$ atas $\mathbb{R}$.
+	\item Untuk $x^2-2 \in \mathbb{Q}[x]$, polinom ini merupakan polinom tak tereduksi di $\mathbb{Q}[x]$. Karena $$x^2-2 =(x-\sqrt{2})(x+\sqrt{2})~~\in \mathbb{Q}(\sqrt{2}),$$ maka $K=\mathbb{Q}(\sqrt{2})$ dan $\mathbb{Q}(\sqrt{2})$ merupakan 					lapangan \textit{splitting} dari $x^2-2$ atas $\mathbb{Q}$.
+	\item 	$K=\mathbb{Q}(\sqrt{2},\textit{i})$ merupakan lapangan \textit{splitting} dari $x^4-x^2-2$ atas $\mathbb{Q}$. Dikarenakan,
+	$$\begin{array}{rcl}
+	x^4-x^2-2 &=& (x^2+1)(x^2-2)\\
+	&=& (x+\textit{i})(x+(\textit{-i}))(x-\sqrt{2})(x+\sqrt{2})~~\in \mathbb{Q}(\sqrt{2},\textit{i}).
+	\end{array}$$
+	\item $\mathbb{C}$ bukanlah lapangan \textit{splitting} dari $x^2+1$ atas $\mathbb{Q}$. Dengan cara yang sama dengan Contoh 1, dapat kita peroleh bahwa $K=\mathbb{Q}(\textit{i})$. Jelas bahwa $\mathbb{Q}(\textit{i}) \subseteq \mathbb{C}$. Namun $\mathbb{C}$ 	bukanlah subset dari $\mathbb{Q}(\textit{i})$, karena terdapat $\sqrt{2} \in \mathbb{C}$ tetapi $\sqrt{2} \notin \mathbb{Q}(\textit{i}).$ Sehingga $\mathbb{C} \ne \mathbb{Q}(\textit{i}).$
+	\item Perhatikan polinom $cx+d \in F[x],$ dengan $c,d\in F.$  $cx+d$ merupakan split atas F, karena $$cx+d=c(x+c^{-1}d),$$ di mana $c^{-1}d \in F$. Akibatnya, $F$ adalah lapangan \textit{splitting} dari $cx+d$ atas $F$.
+	\end{enumerate}
+\par Dari contoh-contoh di atas, dapat disimpulkan beberapa hal berkaitan dengan ke-tak tereduksi-an dari $f(x)$. Jika $f(x)$ tak tereduksi  di $F[x]$, maka akan ada lapangan perluasan $K$ dari $F$ yang memuat akar dari $f(x)$ tersebut, seperti contoh 1 dan 2. Jika $f(x)$ 		tereduksi di $F[x]$, akan ada dua kemungkinan, pertama, ketika $f(x)$ tereduksi dan dapat dinyatakan sebagai faktor-faktor linier di $F[x]$, maka $F$ adalah lapangan \textit{splitting} dari dirinya sendiri, seperti contoh 5, kedua, ketika $f(x)$ tereduksi namun belum 		dapat dinyatakan sebagai faktor-faktor linier di $F[x]$, maka akan ada lapangan perluasan $K$ dari $F$ yang memuat akar dari $f(x)$ tersebut, seperti contoh 3.
+\\
+\\
+	\textbf{Teorema 8.1}
+\par	Misal $f(x) \in F[x]$ dan deg$(f(x))=n>0$, maka akan terdapat $K$ suatu lapangan \textit{splitting} dari $f(x)$ atas $F$ sedemikian sehingga $[K:F] \le n!.$
+	\textit{Bukti}
+\\ 	Untuk membuktikan teorema ini akan digunakan induksi.
+	\begin{itemize}
+	\item Tunjukan benar untuk n=1. deg$(f(x))=1$, maka $K=F$ adalah lapangan \textit{splitting} dari $f(x)$ atas $F$ dan $[F:F]=1\le 1!.$
+	\item Asumsikan benar untuk deg$(f(x)) =n-1.$  Maka akan terdapat $K$ suatu lapangan \textit{splitting} dari $f(x)$ atas $F$,  sedemikian sehingga $[K:F]\le (n-1)!.$
+	\item Tunjukan benar untuk deg$(f(x))=n$.\\
+	Perhatikan bahwa $F$ adalah daerah faktorisasi tunggal, maka untuk $f(x)\in F[x]$ dapat dinyatakan sebagai, $$f(x)=p(x)\cdot (polinomial-polinomial~tak~tereduksi~lainnya),$$ dengan $p(x)$ merupakan polinom tak tereduksi.Tanpa mengurangi keumuman dapat 			diasumsikan $p(x)$ adalah polinom monik, sehingga $p(x)$ adalah polinom minimal untuk suatu u.\\ \\
+	Karena $p(x)$ tak tereduksi, maka dapat dibentuk lapangan $F[x]/p(x)$ sedemikian sehingga $F\subset F[x]/p(x)$ dan $u\in F[x]/p(x)$ di mana $p(u)=0_F.$ \\ \\
+	Berdasarkan Teorema 6.3, $F[x]/p(x)\cong F(u)$ dan 
+	$$\begin{array}{rcl}
+	[F[x]/p(x)~:~F] = [F(u)~:~F]&=&deg(p(x))\\ 
+	&\le& deg(f(x))\\ 
+	&=& n.
+	\end{array}$$
+	\\ \\
+	Selanjutnya, dikarenakan $p(u)=0_F$, diperoleh, $$f(x)=(x-u)g(x),$$ untuk suatu $g(x)\in F(u)[x].$\\ \\
+	Perhatikan bahwa deg$(g(x))=n-1$, artinya keberadaan lapangan \textit{splitting} $K$ dari $g(x)$ atas $F(u)$ dijamin oleh asumsi sebelumnya, sedemikian sehingga $[K:F(u)]\le (n-1)!$.Sehingga,$$ g(x)=c(x-u_1)(x-u_2)...(x-u_{n-1})\in K[x]$$ jika dan hanya jika 
+	$$f(x)=c(x-u)(x-u_1)(x-u_2)...(x-u_{n-1})\in K'[x].$$\\
+	Perhatikan juga, $K'=F(u_1,u_2,...,u_{n-1})=F(u,u_1,u_2,...,u_{n-1})$. Jadi, $K'$ adalah lapanga \textit{splitting} dari $f(x)$ atas $F$. Sehingga,
+	$$\begin{array}{rcl}
+	[K':F]&=&[K':K][K:F(u)][F(u):F]\\
+	&\le& 1\cdot (n-1)!\cdot n\\
+	&=& n!
+	\end{array}$$
+	\end{itemize}
+	Jadi, terbukti.$\blacksquare$
+\\
+\\
+	\textbf{Teorema 8.2}
+\par	Misal $F,E$ adalah lapangan, $\sigma : F \longrightarrow E$ suatu isomorphisma, $f(x) \in F[x]$, deg$(f(x))>0$. $\sigma f(x) \in E[x]$.\\
+	$K$ : lapangan \textit{splitting} dari $f(x)$ atas $F$.\\
+	$L$ : lapangan \textit{splitting} dari $\sigma f(x)$ atas $F$.\\
+	Maka, $K\cong L.$
